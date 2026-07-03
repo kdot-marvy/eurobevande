@@ -75,9 +75,10 @@ $vino_pdf        = get_field('prodotti_vino_pdf') ?: ''; // SAFE
         <img src="<?php echo esc_url($hero_bg['url']); ?>" class="mobile-hero__bg">
     <?php endif; ?>
 
-    <div class="mobile-hero__overlay"></div>
 
     <div class="mobile-hero__content">
+          <div class="mobile-hero__overlay"></div>
+
         <h1 class="mobile-hero__title"><?php echo esc_html($hero_title); ?></h1>
         <div class="mobile-hero__subtitle"><?php echo wp_kses_post($hero_sub); ?></div>
     </div>

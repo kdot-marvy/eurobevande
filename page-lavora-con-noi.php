@@ -27,7 +27,7 @@ get_header();
         <div class="hero-center">
             <div class="hero-text text-white">
                 <h1 class="fw-bold"><?php the_field('careers_hero_title'); ?></h1>
-                <p class="paragraph mt-3"><?php the_field('careers_hero_paragraph'); ?></p>
+                <div class="paragraph mt-3"><?php the_field('careers_hero_paragraph'); ?></div>
             </div>
         </div>
 
@@ -40,11 +40,11 @@ get_header();
             <img src="<?php echo $hero_img['url']; ?>" alt="Hero background" class="mobile-hero__bg">
         <?php endif; ?>
 
-        <div class="mobile-hero__overlay"></div>
 
         <div class="mobile-hero__content">
+            <div class="mobile-hero__overlay"></div>
             <h1 class="mobile-hero__title"><?php the_field('careers_hero_title'); ?></h1>
-            <p class="mobile-hero__subtitle"><?php the_field('careers_hero_paragraph'); ?></p>
+            <div class="mobile-hero__subtitle"><?php the_field('careers_hero_paragraph'); ?></div>
         </div>
 
     </section>

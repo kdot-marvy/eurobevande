@@ -84,7 +84,7 @@ get_header();
 
         <div class="container-fluid hero-services">
 
-            <a href="/servizi#servizio1" class="service mt-auto">
+            <a href="/euro-bevande/servizi#servizio1" class="service mt-auto">
                 <span class="number">01</span>
                 <span class="label">Analisi & Menu Design</span>
             </a>
@@ -149,9 +149,9 @@ get_header();
             </div>
         </div>
 
-        <div class="mobile-hero__overlay"></div>
 
         <div class="mobile-hero__content">
+            <div class="mobile-hero__overlay"></div>
             <h1 class="mobile-hero__title"><?php the_field('home_hero_title'); ?></h1>
             <p class="mobile-hero__subtitle"><?php the_field('home_hero_subtitle'); ?></p>
         </div>
@@ -179,52 +179,40 @@ get_header();
   <circle cx="73" cy="270" r="6" fill="#145fAA" />
   <circle cx="30" cy="395" r="6" fill="#145fAA" />
 </svg>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="process-step">
-        <div class="step-number">01</div>
-        <div class="step-text">
-            <h3>Analisi & Menu Design</h3>
-        </div>
+            <a href="/euro-bevande/servizi#servizio1" class="service">
+                <div class="step-number">01</div>
+                <div class="step-text">
+                    <h3>Analisi & Menu Design</h3>
+                </div>
+            </a>
         </div>
 
         <div class="process-step shift-left">
-        <div class="step-number">02</div>
-        <div class="step-text">
-            <h3>Formazione & Tasting</h3>
-        </div>
+            <a href="/euro-bevande/servizi#servizio2" class="service">
+                <div class="step-number">02</div>
+                <div class="step-text">
+                    <h3>Formazione & Tasting</h3>
+                </div>
+            </a>
         </div>
 
         <div class="process-step shift-left">
-        <div class="step-number">03</div>
-        <div class="step-text">
-            <h3>Setup & Attrezzature</h3>
-        </div>
+            <a href="/euro-bevande/servizi#servizio3" class="service">
+                <div class="step-number">03</div>
+                <div class="step-text">
+                    <h3>Setup & Attrezzature</h3>
+                </div>
+            </a>
         </div>
 
         <div class="process-step">
-        <div class="step-number">04</div>
-        <div class="step-text">
-            <h3>Evoluzione & Partnership</h3>
-        </div>
+            <a href="/euro-bevande/servizi#servizio4" class="service">
+                <div class="step-number">04</div>
+                <div class="step-text">
+                    <h3>Evoluzione & Partnership</h3>
+                </div>
+            </a>
         </div>
 
     </div>

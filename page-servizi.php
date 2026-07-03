@@ -50,11 +50,11 @@ get_header();
     <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="" class="mobile-hero__bg">
   <?php endif; ?>
 
-  <div class="mobile-hero__overlay"></div>
 
   <div class="mobile-hero__content">
+      <div class="mobile-hero__overlay"></div>
     <h1 class="mobile-hero__title"><?php echo esc_html($hero_title); ?></h1>
-    <p class="mobile-hero__subtitle"><?php echo esc_html($hero_sub); ?></p>
+    <div class="mobile-hero__subtitle"><?php echo wp_kses_post($hero_sub); ?></div>
   </div>
 
 </section>
@@ -75,7 +75,7 @@ get_header();
     </div>
   </div>
 
-  <div class="hero-overlay"></div>
+  <!-- <div class="hero-overlay"></div> -->
 
   <div class="hero-center">
     <div class="hero-text text-white">

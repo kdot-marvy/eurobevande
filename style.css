@@ -135,7 +135,7 @@ html, body {
    SCROLL SNAP
 ========================================= */
 .scroll-container {
-  height: calc(100vh - 80px);;
+  height: calc(100vh - 80px);
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -887,7 +887,6 @@ html, body {
     /* CAROUSEL */
     .mobile-version #heroCarousel {
         width: 100%;
-        height: 55vh; /* altezza perfetta per mobile */
         position: relative;
         overflow: hidden;
         z-index: 1;
@@ -895,7 +894,6 @@ html, body {
 
     .mobile-version #heroCarousel .carousel-inner,
     .mobile-version #heroCarousel .carousel-item {
-        height: 55vh;
         background-size: cover;
         background-position: center;
     }
@@ -953,16 +951,16 @@ html, body {
       display: none;
     }
 
-  .mobile-hero {
+.mobile-hero {
     position: relative;
     width: 100%;
-  /* min-height: 100vh; */
     overflow: hidden;
-
+    height: calc(100vh - 90px) !important;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* 👈 spinge il contenuto in basso */
-  }
+    justify-content: flex-end; /* pushes content to the bottom */
+    overflow: hidden;
+}
 
 /* Image inside HTML */
 .mobile-hero__bg {
@@ -970,10 +968,9 @@ html, body {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* behaves like background-size: cover */
+  object-fit: cover;
   z-index: 0;
 }
-
 
 /* Overlay */
 .mobile-hero__overlay {
@@ -990,18 +987,20 @@ html, body {
 
 /* Content */
 .mobile-hero__content {
-  position: relative;
+  position: absolute;
   z-index: 2;
   color: #fff;
-  max-width: 90%;
-  margin-top: 0; /* 👈 rimosso */
-  padding: 32px 20px;
+  max-width: 100%;
+  bottom: 0px;
 }
 
 .mobile-hero__title {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 10px;
+  z-index: 5;
+  position: relative;
+  padding: 0px 20px 0px 20px;
 }
 
 .mobile-hero__subtitle {
@@ -1009,7 +1008,11 @@ html, body {
   opacity: 0.9;
   margin-bottom: 20px;
   font-weight: 400;
+  z-index: 5;
+  position: relative;
+  padding: 0px 20px 5px 20px;
 }
+
 
 .mobile-hero__cta {
   display: inline-block;
@@ -1030,14 +1033,14 @@ html, body {
  .hero-carousel-55 {
     position: relative;
     width: 100%;
-    height: 100vh !important; /* mantiene il tuo valore */
+    height: calc(100vh - 90px) !important;
     overflow: hidden;
   }
 
     .hero-carousel-55 #heroCarousel,
   .hero-carousel-55 #heroCarousel .carousel-inner,
   .hero-carousel-55 #heroCarousel .carousel-item {
-    height: 100vh !important;
+    height: calc(100vh - 90px) !important;
   }
 
   .hero-carousel-55 .mobile-hero__bg {
@@ -1052,20 +1055,20 @@ html, body {
     inset: 0;
     background: linear-gradient(
       to top,
-      rgba(0,0,0,0.75),
-      rgba(0,0,0,0.35),
-      rgba(0,0,0,0)
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.75) 50%,
+      rgba(0,0,0,0) 100%
     );
+
     z-index: 2;
   }
 
   /* TESTO SOPRA IL CAROUSEL */
   .hero-carousel-55 .mobile-hero__content {
     position: absolute;
-    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
+    width: 100%;
     text-align: center;
     z-index: 3;
     color: #fff;
@@ -1075,12 +1078,13 @@ html, body {
   .hero-carousel-55 .mobile-hero__title {
     font-size: 48px;
     font-weight: 700;
-    margin-bottom: 10px;
+    bottom: 10px;
   }
 
   .hero-carousel-55 .mobile-hero__subtitle {
     font-size: 24px;
     opacity: 0.9;
+    bottom: 20px;
   }
 
 }
@@ -1115,12 +1119,17 @@ html, body {
 
 /* STEP */
 .process-step {
-  margin-bottom: 80px;
+  margin-bottom: 54px;
   position: relative;
   z-index: 5;
 }
 
-.step-number {
+  .service{
+    color: inherit;
+    text-decoration: none;
+  }
+
+.process-step > .step-number {
   font-size: 80px;
   font-weight: 700;
   line-height: 1;
@@ -1205,6 +1214,26 @@ html, body {
 .product-pdf-link:active {
     transform: scale(0.97);
 }
+
+.footer-map-wrapper {
+    width: 100%;
+    padding: 30px 0;
+    background: #f7f7f7;
+    flex: 1;
+}
+
+.footer-map-container {
+  
+}
+
+.footer-map-iframe {
+    width: 100% !important;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+
 
 
 

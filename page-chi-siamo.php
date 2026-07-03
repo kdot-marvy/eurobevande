@@ -65,14 +65,14 @@ $sec3_image      = get_field('chi_siamo_section3_image');
         <img src="<?php echo esc_url($hero_bg['url']); ?>" class="mobile-hero__bg">
     <?php endif; ?>
 
-    <div class="mobile-hero__overlay"></div>
 
     <div class="mobile-hero__content">
+          <div class="mobile-hero__overlay"></div>
         <h1 class="mobile-hero__title"><?php echo esc_html($hero_title); ?></h1>
-        <p class="mobile-hero__subtitle"><?php echo esc_html($hero_sub); ?></p>
+        <div class="mobile-hero__subtitle"><?php echo wp_kses_post($hero_sub); ?></div>
     </div>
 
-</section>
+</section>  
 
 <!-- SECTION 1 -->
 <section class="page-section step-section">
