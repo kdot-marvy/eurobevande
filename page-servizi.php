@@ -41,159 +41,179 @@ $step4_image       = get_field('servizi_step4_image');
 get_header();
 ?>
 
-<div class="scroll-container">
+<div class="page-wrapper">
+        <?php get_template_part('template-parts/header-template'); ?>
 
-<!-- MOBILE HERO -->
-<section class="mobile-hero mobile-version">
-
-  <?php if($hero_bg): ?>
-    <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="" class="mobile-hero__bg">
-  <?php endif; ?>
+      <div class="swiper mainSwiper">
+        <div class="swiper-wrapper">
 
 
-  <div class="mobile-hero__content">
-      <div class="mobile-hero__overlay"></div>
-    <h1 class="mobile-hero__title"><?php echo esc_html($hero_title); ?></h1>
-    <div class="mobile-hero__subtitle"><?php echo wp_kses_post($hero_sub); ?></div>
-  </div>
+          <!-- MOBILE HERO — SOLO SU MOBILE -->
+          <?php if (wp_is_mobile()) : ?>
+          <div class="swiper-slide">
+            <section class="mobile-hero mobile-version">
 
-</section>
+              <?php if($hero_bg): ?>
+                <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="" class="mobile-hero__bg">
+              <?php endif; ?>
+                <div class="mobile-hero__overlay"></div>
 
+              <div class="mobile-hero__content">
+                <h1 class="mobile-hero__title  s48"><?php echo esc_html($hero_title); ?></h1>
+                <div class="mobile-hero__subtitle text24"><?php echo wp_kses_post($hero_sub); ?></div>
+              </div>
 
-<!-- DESKTOP HERO -->
-<section class="page-section hero-section desktop-version">
-
-  <?php if($hero_bg): ?>
-    <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="" class="fullscreen-cover">
-  <?php endif; ?>
-
-  <div class="container-fluid px-4">
-    <div class="hero-contacts text-white">
-      <?php if($hero_phone): ?><div>Telefono: <?php echo esc_html($hero_phone); ?></div><?php endif; ?>
-      <?php if($hero_mail): ?><div>Mail: <?php echo esc_html($hero_mail); ?></div><?php endif; ?>
-      <?php if($hero_fax): ?><div>Fax: <?php echo esc_html($hero_fax); ?></div><?php endif; ?>
-    </div>
-  </div>
-
-  <!-- <div class="hero-overlay"></div> -->
-
-  <div class="hero-center">
-    <div class="hero-text text-white">
-      <h1 class="fw-bold"><?php echo esc_html($hero_title); ?></h1>
-      <div class="paragraph"><?php echo wp_kses_post($hero_sub); ?></div>
-    </div>
-  </div>
-
-</section>
+            </section>
+          </div>
+          <?php endif; ?>
 
 
+          <!-- DESKTOP HERO — PRIMA SLIDE REALE SU DESKTOP -->
+          <?php if (!wp_is_mobile()) : ?>
+            <div class="swiper-slide">
+              <section class="page-section hero-section desktop-version">
 
-<!-- STEP 1 -->
-<section class="page-section step-section" id="servizio1">
-  <div class="container-fluid">
-    <div class="row">
+                <?php if($hero_bg): ?>
+                  <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="" class="fullscreen-cover">
+                <?php endif; ?>
 
-      <div class="col-lg-6 step-left">
-        <h2 class="step-title desktop-version">Il nostro metodo</h2>
-        <div class="step-number"><?php echo esc_html($step1_number); ?></div>
-        <h2 class="fw-bold"><?php echo esc_html($step1_title); ?></h2>
-        <div class="paragraph"><?php echo wp_kses_post($step1_desc); ?></div>
-        <?php if($step1_next): ?>
-          <div class="next-step desktop-version"><?php echo esc_html($step1_next); ?></div>
-        <?php endif; ?>
+                <div class="container-fluid px-4">
+                  <div class="hero-contacts text-white">
+                    <?php if($hero_phone): ?><div>Telefono: <?php echo esc_html($hero_phone); ?></div><?php endif; ?>
+                    <?php if($hero_mail): ?><div>Mail: <?php echo esc_html($hero_mail); ?></div><?php endif; ?>
+                    <?php if($hero_fax): ?><div>Fax: <?php echo esc_html($hero_fax); ?></div><?php endif; ?>
+                  </div>
+                </div>
+
+                <div class="hero-center">
+                  <div class="hero-text text-white">
+                    <h1 class="fw-bold"><?php echo esc_html($hero_title); ?></h1>
+                    <div class="paragraph"><?php echo wp_kses_post($hero_sub); ?></div>
+                  </div>
+                </div>
+
+              </section>
+            </div>
+          <?php endif; ?>
+
+
+          <!-- STEP 1 -->
+          <div class="swiper-slide">
+            <section class="page-section step-section" id="servizio1">
+              <div class="container-fluid h-100">
+                <div class="row h-100">
+
+                  <div class="col-lg-6 step-left">
+                    <h2 class="step-title desktop-version">Il nostro metodo</h2>
+                    <div class="step-number"><?php echo esc_html($step1_number); ?></div>
+                    <h2 class="step-title"><?php echo esc_html($step1_title); ?></h2>
+                    <div class="paragraph"><?php echo wp_kses_post($step1_desc); ?></div>
+                    <?php if($step1_next): ?>
+                      <div class="next-step desktop-version"><?php echo esc_html($step1_next); ?></div>
+                    <?php endif; ?>
+                  </div>
+
+                  <div class="col-lg-6 step-right p-0">
+                    <?php if($step1_image): ?>
+                      <img src="<?php echo esc_url($step1_image['url']); ?>" alt="">
+                    <?php endif; ?>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+          </div>
+
+
+          <!-- STEP 2 -->
+          <div class="swiper-slide">
+            <section class="page-section step-section" id="servizio2">
+              <div class="container-fluid h-100">
+                <div class="row h-100">
+
+                  <div class="col-lg-6 step-left">
+                    <h2 class="step-title desktop-version">Il nostro metodo</h2>
+                    <div class="step-number"><?php echo esc_html($step2_number); ?></div>
+                    <h2 class="step-title"><?php echo esc_html($step2_title); ?></h2>
+                    <div class="paragraph"><?php echo wp_kses_post($step2_desc); ?></div>
+                    <?php if($step2_next): ?>
+                      <div class="next-step desktop-version"><?php echo esc_html($step2_next); ?></div>
+                    <?php endif; ?>
+                  </div>
+
+                  <div class="col-lg-6 step-right p-0">
+                    <?php if($step2_image): ?>
+                      <img src="<?php echo esc_url($step2_image['url']); ?>" alt="">
+                    <?php endif; ?>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+          </div>
+
+
+          <!-- STEP 3 -->
+          <div class="swiper-slide">
+            <section class="page-section step-section" id="servizio3">
+              <div class="container-fluid h-100">
+                <div class="row h-100">
+
+                  <div class="col-lg-6 step-left">
+                    <h2 class="step-title desktop-version">Il nostro metodo</h2>
+                    <div class="step-number"><?php echo esc_html($step3_number); ?></div>
+                    <h2 class="step-title"><?php echo esc_html($step3_title); ?></h2>
+                    <div class="paragraph"><?php echo wp_kses_post($step3_desc); ?></div>
+                    <?php if($step3_next): ?>
+                      <div class="next-step desktop-version"><?php echo esc_html($step3_next); ?></div>
+                    <?php endif; ?>
+                  </div>
+
+                  <div class="col-lg-6 step-right p-0">
+                    <?php if($step3_image): ?>
+                      <img src="<?php echo esc_url($step3_image['url']); ?>" alt="">
+                    <?php endif; ?>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+          </div>
+
+
+          <!-- STEP 4 -->
+          <div class="swiper-slide">
+            <section class="page-section step-section" id="servizio4">
+              <div class="container-fluid h-100">
+                <div class="row h-100">
+
+                  <div class="col-lg-6 step-left">
+                    <h2 class="step-title desktop-version">Il nostro metodo</h2>
+                    <div class="step-number"><?php echo esc_html($step4_number); ?></div>
+                    <h2 class="step-title"><?php echo esc_html($step4_title); ?></h2>
+                    <div class="paragraph"><?php echo wp_kses_post($step4_desc); ?></div>
+                  </div>
+
+                  <div class="col-lg-6 step-right p-0">
+                    <?php if($step4_image): ?>
+                      <img src="<?php echo esc_url($step4_image['url']); ?>" alt="">
+                    <?php endif; ?>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+          </div>
+
+
+          <!-- FOOTER -->
+          <div class="swiper-slide">
+            <?php get_template_part('template-parts/footer-vertical'); ?>
+          </div>
+
+
+        </div>
       </div>
-
-      <div class="col-lg-6 step-right p-0">
-        <?php if($step1_image): ?>
-          <img src="<?php echo esc_url($step1_image['url']); ?>" alt="">
-        <?php endif; ?>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- STEP 2 -->
-<section class="page-section step-section" id="servizio2">
-  <div class="container-fluid">
-    <div class="row">
-
-      <div class="col-lg-6 step-left">
-        <h2 class="step-title desktop-version">Il nostro metodo</h2>
-        <div class="step-number"><?php echo esc_html($step2_number); ?></div>
-        <h2 class="fw-bold"><?php echo esc_html($step2_title); ?></h2>
-        <div class="paragraph"><?php echo wp_kses_post($step2_desc); ?></div>
-        <?php if($step2_next): ?>
-          <div class="next-step desktop-version"><?php echo esc_html($step2_next); ?></div>
-        <?php endif; ?>
-      </div>
-
-      <div class="col-lg-6 step-right p-0">
-        <?php if($step2_image): ?>
-          <img src="<?php echo esc_url($step2_image['url']); ?>" alt="">
-        <?php endif; ?>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- STEP 3 -->
-<section class="page-section step-section" id="servizio3">
-  <div class="container-fluid">
-    <div class="row">
-
-      <div class="col-lg-6 step-left">
-        <h2 class="step-title desktop-version">Il nostro metodo</h2>
-        <div class="step-number"><?php echo esc_html($step3_number); ?></div>
-        <h2 class="fw-bold"><?php echo esc_html($step3_title); ?></h2>
-        <div class="paragraph"><?php echo wp_kses_post($step3_desc); ?></div>
-        <?php if($step3_next): ?>
-          <div class="next-step desktop-version"><?php echo esc_html($step3_next); ?></div>
-        <?php endif; ?>
-      </div>
-
-      <div class="col-lg-6 step-right p-0">
-        <?php if($step3_image): ?>
-          <img src="<?php echo esc_url($step3_image['url']); ?>" alt="">
-        <?php endif; ?>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- STEP 4 -->
-<section class="page-section step-section" id="servizio4">
-  <div class="container-fluid">
-    <div class="row">
-
-      <div class="col-lg-6 step-left">
-        <h2 class="step-title desktop-version">Il nostro metodo</h2>
-        <div class="step-number"><?php echo esc_html($step4_number); ?></div>
-        <h2 class="fw-bold"><?php echo esc_html($step4_title); ?></h2>
-        <div class="paragraph"><?php echo wp_kses_post($step4_desc); ?></div>
-      </div>
-
-      <div class="col-lg-6 step-right p-0">
-        <?php if($step4_image): ?>
-          <img src="<?php echo esc_url($step4_image['url']); ?>" alt="">
-        <?php endif; ?>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <?php get_template_part('template-parts/footer-vertical'); ?>
-
-
 </div>
 
 <?php get_footer(); ?>

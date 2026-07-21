@@ -1,0 +1,406 @@
+/* =========================================
+   STEP SECTION
+========================================= */
+.step-section {
+  display: flex;
+  align-items: center;
+}
+
+.step-left {
+  padding: 100px 100px 20px 100px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.step-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.step-left-subtitle{
+  padding-top: 60px;
+  font-size: 38px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.step-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.step-number::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--primary-color) !important;
+  opacity: 0.9;
+}
+
+.star {
+    margin: 30px 0;
+    font-size: 38px;
+    margin-top: auto;
+}
+
+.next-step {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-top: auto;
+}
+
+.paragraph {
+  font-size: 24px;
+}
+
+.step-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================
+   SERVIZI QUAD
+========================================= */
+.servizi-quad .servizio-box {
+  padding: 20px;
+  text-align: left;
+}
+
+.servizi-quad .numero {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.servizi-quad h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.servizi-quad p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* =========================================
+   PROCESS SECTION
+========================================= */
+.process-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100% !important;
+  display: flex;
+      color: #fff;
+}
+
+.process-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 80px;
+}
+
+.home-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100% !important;
+  display: flex;
+}
+
+.section-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.section-intro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  color: #fff;
+  max-width: 100%;
+  position: relative;
+  height: 100%
+}
+
+.section-title {
+    font-size: 64px;
+    font-weight: 700;
+    z-index: 5;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: auto;
+}
+
+.section-paragraph {
+      position: relative;
+    font-size: 20px;
+    opacity: 0.9;
+    margin-top: auto; 
+    margin-bottom: 130px;
+    z-index: 5;
+    padding-left: 20px;
+}
+
+/* CURVA LUNGA TIPO ")" */
+.long-curve {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 10;
+}
+
+.process-step {
+  margin-bottom: 54px;
+  position: relative;
+  z-index: 5;
+}
+
+.process-step > .step-number {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.step-text h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.step-text p {
+  font-size: 16px;
+  opacity: 0.8;
+  max-width: 500px;
+}
+
+.shift-left {
+  margin-left: 60px;
+}
+
+.process-intro {
+  position: relative;
+  z-index: 3;
+  padding-left: 20px;
+  max-width: 600px;
+}
+
+.process-intro p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* =========================================
+   PDF LINK
+========================================= */
+.product-pdf-link {
+    font-weight: 500;
+    font-size: 20px;
+    color: #004AAD;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+
+
+.product-pdf-link:hover {
+    color: #002F6C;
+}
+
+
+.product-pdf-link:active {
+    transform: scale(0.97);
+}
+
+/* =========================================
+   MAP WRAPPER (NON FOOTER)
+========================================= */
+.footer-map-wrapper {
+    width: 100%;
+    padding: 30px 0;
+    background: #f7f7f7;
+    flex: 1;
+}
+
+.footer-map-container {
+}
+
+.footer-map-iframe {
+    width: 100% !important;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   SWIPER
+========================================= */
+.mainSwiper {
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.mainSwiper .swiper-slide {
+  overflow: visible;
+}
+
+/* =========================================
+   RESPONSIVE — COMPONENTS
+========================================= */
+@media (max-width: 768px) {
+
+    .step-title {
+        padding-bottom: 0px;
+    }
+
+  /* Step */
+  .step-left{
+    padding : 20px !important;
+  }
+
+  .step-number {
+    font-size: 128px;
+    font-weight: 700;
+  }
+
+  .step-title {
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  .step-number::before {
+    display: none;
+  }
+
+  /* Process */
+  .long-curve {
+    width: 120px;
+    height: auto;
+  }
+
+  .step-right {
+    display: none !important;
+  }
+
+  .step-left-subtitle{
+    padding-top: 5px !important;
+    font-size: 48px !important;
+    font-weight: 700 !important;
+  }
+
+  .star{
+    text-align: center;
+  }
+
+}
+
+/* HERO CAROUSEL 55 (component) */
+@media (max-width: 992px) {
+
+  .hero-carousel-55 {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 90px) !important;
+    overflow: hidden;
+  }
+
+  .hero-carousel-55 #heroCarousel,
+  .hero-carousel-55 #heroCarousel .carousel-inner,
+  .hero-carousel-55 #heroCarousel .carousel-item {
+    height: calc(100vh - 90px) !important;
+  }
+
+  .hero-carousel-55 .mobile-hero__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+.hero-carousel-55 .mobile-hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    /* Il blu che hai scelto */
+    background: rgba(33, 85, 168, 0.55); /* #2155A8 con opacità */
+}
+
+
+  .hero-carousel-55 .mobile-carousel__content {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    top: 30%;
+    padding-left: 40px;
+  }
+
+  .hero-carousel-55 .mobile-carousel__title {
+    font-size: 64px;
+    font-weight: 700;
+    bottom: 16px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .hero-carousel-55 .mobile-carousel__subtitle {
+    font-size: 36px;
+    font-weight: 500;
+    bottom: 20px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .paragraph {
+    font-size: 20px;
+  }
+
+  .step-number{
+    margin-top: clamp(0px, 5vh, 100px);
+  }
+
+  .product-header{
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: clamp(0px, 5vh, 100px);
+    margin-bottom: clamp(0px, 5vh, 40px);
+  }
+}
+
+

@@ -30,116 +30,140 @@ $sec3_paragraph  = get_field('chi_siamo_section3_paragraph');
 $sec3_image      = get_field('chi_siamo_section3_image');
 ?>
 
-<div class="scroll-container">
+<div class="page-wrapper">
+    <?php get_template_part('template-parts/header-template'); ?>
 
-<!-- HERO DESKTOP -->
-<section class="page-section hero-section desktop-version">
+    <div class="swiper mainSwiper">
+        <div class="swiper-wrapper">
 
-    <?php if($hero_bg): ?>
-        <img src="<?php echo esc_url($hero_bg['url']); ?>" class="fullscreen-cover">
-    <?php endif; ?>
+            <!-- HERO DESKTOP -->
+            <?php if (!wp_is_mobile()) : ?>
+            <div class="swiper-slide">
+                <section class="page-section hero-section desktop-version">
 
-    <div class="container-fluid px-4">
-        <div class="hero-contacts text-white">
-            <?php if($hero_phone): ?><div>Telefono: <?php echo esc_html($hero_phone); ?></div><?php endif; ?>
-            <?php if($hero_mail): ?><div>Mail: <?php echo esc_html($hero_mail); ?></div><?php endif; ?>
-            <?php if($hero_fax): ?><div>Fax: <?php echo esc_html($hero_fax); ?></div><?php endif; ?>
+                    <?php if($hero_bg): ?>
+                        <img src="<?php echo esc_url($hero_bg['url']); ?>" class="fullscreen-cover">
+                    <?php endif; ?>
+
+                    <div class="container-fluid px-4">
+                        <div class="hero-contacts text-white">
+                            <?php if($hero_phone): ?><div>Telefono: <?php echo esc_html($hero_phone); ?></div><?php endif; ?>
+                            <?php if($hero_mail): ?><div>Mail: <?php echo esc_html($hero_mail); ?></div><?php endif; ?>
+                            <?php if($hero_fax): ?><div>Fax: <?php echo esc_html($hero_fax); ?></div><?php endif; ?>
+                        </div>
+                    </div>
+
+                    <div class="hero-overlay"></div>
+
+                    <div class="hero-center">
+                        <div class="hero-text text-white">
+                            <h1 class="fw-bold"><?php echo esc_html($hero_title); ?></h1>
+                            <div class="paragraph mt-3"><?php echo wp_kses_post($hero_sub); ?></div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+            <?php endif; ?>
+
+            <!-- HERO MOBILE -->
+            <?php if (wp_is_mobile()) : ?>
+            <div class="swiper-slide">
+                <section class="mobile-hero mobile-version">
+
+                    <?php if($hero_bg): ?>
+                        <img src="<?php echo esc_url($hero_bg['url']); ?>" class="mobile-hero__bg">
+                    <?php endif; ?>
+
+                    <div class="mobile-hero__content">
+                        <div class="mobile-hero__overlay"></div>
+                        <h1 class="mobile-hero__title s48"><?php echo esc_html($hero_title); ?></h1>
+                        <div class="mobile-hero__subtitle"><?php echo wp_kses_post($hero_sub); ?></div>
+                    </div>
+
+                </section>
+            </div>
+            <?php endif; ?>
+
+            <!-- SECTION 1 -->
+            <div class="swiper-slide">
+                <section class="page-section step-section">
+                    <div class="container-fluid h-100">
+                        <div class="row h-100">
+
+                            <div class="col-lg-6 step-left">
+                                <h2 class="step-title"><?php echo esc_html($sec1_title); ?></h2>
+                                <h2 class="fw-bold"><?php echo esc_html($sec1_subtitle); ?></h2>
+                                <div class="paragraph"><?php echo wp_kses_post($sec1_paragraph); ?></div>
+                                <div class="star">★</div>
+                            </div>
+
+                            <div class="col-lg-6 step-right p-0">
+                                <?php if($sec1_image): ?>
+                                    <img src="<?php echo esc_url($sec1_image['url']); ?>" alt="">
+                                <?php endif; ?>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SECTION 2 -->
+            <div class="swiper-slide">
+                <section class="page-section step-section">
+                    <div class="container-fluid h-100">
+                        <div class="row h-100">
+
+                            <div class="col-lg-6 step-left">
+                                <h2 class="step-title"><?php echo esc_html($sec2_title); ?></h2>
+                                <h2 class="fw-bold"><?php echo esc_html($sec2_subtitle); ?></h2>
+                                <div class="paragraph"><?php echo wp_kses_post($sec2_paragraph); ?></div>
+                                <div class="star">★</div>
+                            </div>
+
+                            <div class="col-lg-6 step-right p-0">
+                                <?php if($sec2_image): ?>
+                                    <img src="<?php echo esc_url($sec2_image['url']); ?>" alt="">
+                                <?php endif; ?>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SECTION 3 -->
+            <div class="swiper-slide">
+                <section class="page-section step-section">
+                    <div class="container-fluid h-100">
+                        <div class="row h-100">
+
+                            <div class="col-lg-6 step-left">
+                                <h2 class="step-title"><?php echo esc_html($sec3_title); ?></h2>
+                                <h2 class="fw-bold"><?php echo esc_html($sec3_subtitle); ?></h2>
+                                <div class="paragraph"><?php echo wp_kses_post($sec3_paragraph); ?></div>
+                                <div class="star">★</div>
+                            </div>
+
+                            <div class="col-lg-6 step-right p-0">
+                                <?php if($sec3_image): ?>
+                                    <img src="<?php echo esc_url($sec3_image['url']); ?>" alt="">
+                                <?php endif; ?>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="swiper-slide">
+                <?php get_template_part('template-parts/footer-vertical'); ?>
+            </div>
+
         </div>
     </div>
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-center">
-        <div class="hero-text text-white">
-            <h1 class="fw-bold"><?php echo esc_html($hero_title); ?></h1>
-            <div class="paragraph mt-3"><?php echo wp_kses_post($hero_sub); ?></div>
-        </div>
-    </div>
-
-</section>
-
-<!-- HERO MOBILE -->
-<section class="mobile-hero mobile-version">
-
-    <?php if($hero_bg): ?>
-        <img src="<?php echo esc_url($hero_bg['url']); ?>" class="mobile-hero__bg">
-    <?php endif; ?>
-
-
-    <div class="mobile-hero__content">
-          <div class="mobile-hero__overlay"></div>
-        <h1 class="mobile-hero__title"><?php echo esc_html($hero_title); ?></h1>
-        <div class="mobile-hero__subtitle"><?php echo wp_kses_post($hero_sub); ?></div>
-    </div>
-
-</section>  
-
-<!-- SECTION 1 -->
-<section class="page-section step-section">
-    <div class="container-fluid">
-        <div class="row">
-
-            <div class="col-lg-6 step-left">
-                <h2 class="step-title"><?php echo esc_html($sec1_title); ?></h2>
-                <h2 class="fw-bold"><?php echo esc_html($sec1_subtitle); ?></h2>
-                <div class="paragraph"><?php echo wp_kses_post($sec1_paragraph); ?></div>
-                <div class="footer-divider bottom">★</div>
-            </div>
-
-            <div class="col-lg-6 step-right p-0">
-                <?php if($sec1_image): ?>
-                    <img src="<?php echo esc_url($sec1_image['url']); ?>" alt="">
-                <?php endif; ?>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- SECTION 2 -->
-<section class="page-section step-section">
-    <div class="container-fluid">
-        <div class="row">
-
-            <div class="col-lg-6 step-left">
-                <h2 class="step-title"><?php echo esc_html($sec2_title); ?></h2>
-                <h2 class="fw-bold"><?php echo esc_html($sec2_subtitle); ?></h2>
-                <div class="paragraph"><?php echo wp_kses_post($sec2_paragraph); ?></div>
-                <div class="footer-divider bottom">★</div>
-            </div>
-
-            <div class="col-lg-6 step-right p-0">
-                <?php if($sec2_image): ?>
-                    <img src="<?php echo esc_url($sec2_image['url']); ?>" alt="">
-                <?php endif; ?>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- SECTION 3 -->
-<section class="page-section step-section">
-    <div class="container-fluid">
-        <div class="row">
-
-            <div class="col-lg-6 step-left">
-                <h2 class="step-title"><?php echo esc_html($sec3_title); ?></h2>
-                <h2 class="fw-bold"><?php echo esc_html($sec3_subtitle); ?></h2>
-                <div class="paragraph"><?php echo wp_kses_post($sec3_paragraph); ?></div>
-                <div class="footer-divider bottom">★</div>
-            </div>
-
-            <div class="col-lg-6 step-right p-0">
-                <?php if($sec3_image): ?>
-                    <img src="<?php echo esc_url($sec3_image['url']); ?>" alt="">
-                <?php endif; ?>
-            </div>
-
-        </div>
-    </div>
-</section>
-    <?php get_template_part('template-parts/footer-vertical'); ?>
 </div>
 
 <?php get_footer(); ?>

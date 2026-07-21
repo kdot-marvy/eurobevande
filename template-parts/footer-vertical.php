@@ -101,14 +101,16 @@ $footer_map = get_field('footer_map_iframe', $footer_id);
                     <?php endif; ?>
                 </div>
 
-                <h3 class="footer-title"><?php the_field('footer_left_title', $footer_id); ?></h3>
-                <div class="footer-address footer-icons"><?php the_field('footer_left_text', $footer_id); ?></div>
-
-                <h3 class="footer-title"><?php the_field('footer_right_title', $footer_id); ?></h3>
-                <div class="footer-contacts footer-icons"><?php the_field('footer_right_text', $footer_id); ?></div>
-
-                <h3 class="footer-title">Privacy</h3>
+                <div>
+                    <h3 class="footer-title"><?php the_field('footer_left_title', $footer_id); ?></h3>
+                    <div class="footer-address footer-icons"><?php the_field('footer_left_text', $footer_id); ?></div>
+                </div>
+                <div>
+                    <h3 class="footer-title"><?php the_field('footer_right_title', $footer_id); ?></h3>
+                    <div class="footer-contacts footer-icons"><?php the_field('footer_right_text', $footer_id); ?></div>
+                </div>
                 <div class="footer-privacy-mobile">
+                    <h3 class="footer-title">Privacy</h3>
 
                     <a href="/privacy-sito" class="footer-privacy-link" target="_blank">
                         <svg class="footer-icon"><use href="#icon-lock"></use></svg>

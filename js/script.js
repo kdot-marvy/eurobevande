@@ -1,69 +1,62 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const container = document.querySelector(".scroll-container");
-  const sections = document.querySelectorAll(".page-section");
+  /* -----------------------------
+     SWIPER (tuo codice)
+  ----------------------------- */
+  const swiper = new Swiper('.mainSwiper', {
+    direction: 'vertical',
+    speed: 600,
+    mousewheel: {
+      releaseOnEdges: true,
+      forceToAxis: true,
+    },
+    threshold: 10,
+    resistanceRatio: 0.2,
+    allowTouchMove: true,
+    on: {
+      slideChange: function () {
+        updateDots(this.activeIndex);
+      }
+    }
+  });
+
   const dots = document.querySelectorAll(".side-dots .dot");
-  let isScrolling = false;
 
-  // Attiva la prima sezione
-  sections[0].classList.add("active");
-  dots[0].classList.add("active");
-
-  function activateSection(index) {
-    sections.forEach((sec, i) => {
-      sec.classList.toggle("active", i === index);
-    });
+  function updateDots(index) {
     dots.forEach((dot, i) => {
       dot.classList.toggle("active", i === index);
     });
   }
 
-  // Scroll cinematico
-  const SCROLL_DELAY = 900;
-
-  container.addEventListener("wheel", (e) => {
-    if (isScrolling) return;
-
-    isScrolling = true;
-
-    const direction = e.deltaY > 0 ? 1 : -1;
-    const pageHeight = container.clientHeight;
-    const target = container.scrollTop + direction * pageHeight;
-
-    container.scrollTo({
-      top: target,
-      behavior: "smooth"
-    });
-
-    setTimeout(() => {
-      const index = Math.round(container.scrollTop / pageHeight);
-      activateSection(index);
-      isScrolling = false;
-    }, SCROLL_DELAY);
-  });
-
-  // Click sui dots
   dots.forEach(dot => {
     dot.addEventListener("click", () => {
       const index = parseInt(dot.dataset.index);
-      const pageHeight = container.clientHeight;
-
-      container.scrollTo({
-        top: index * pageHeight,
-        behavior: "smooth"
-      });
-
-      activateSection(index);
+      swiper.slideTo(index);
     });
   });
 
-  // ---------------------------------------------
-  //  ALERT DI CONFERMA CANDIDATURA
-  // ---------------------------------------------
   const url = new URL(window.location.href);
-
   if (url.searchParams.get("candidatura") === "ok") {
     alert("Grazie! La tua candidatura è stata inviata correttamente.");
+  }
+
+
+  /* -----------------------------
+     MOBILE SUBMENU FIX
+  ----------------------------- */
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  if (isMobile) {
+    document.querySelectorAll(".nav-item.dropdown-mega").forEach(item => {
+      const submenu = item.querySelector(".mega-menu.small-dropdown");
+
+      if (submenu) {
+        item.querySelector(".nav-link").addEventListener("click", function(e) {
+          e.preventDefault(); // evita navigazione immediata
+          item.classList.toggle("open");
+        });
+      }
+    });
   }
 
 });
