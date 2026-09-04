@@ -9,7 +9,7 @@
 
 .eb-footer-section {
     background: var(--primary-color);
-    padding: 60px 0 40px;
+    padding: 20px 0;
     border-top: 1px solid #e2ded9;
     color: #ffffff;
     position: relative;
@@ -62,17 +62,32 @@
 .footer-contacts {
     font-size: 16px;
     line-height: 1.7;
+    display: flex;
+    justify-content: center;
 }
 
-/* ============================
-   COLONNE DESKTOP
-============================ */
-.footer-left,
-.footer-center,
-.footer-right,
-.footer-privacy-column {
-
+/* Center all footer content */
+.eb-footer .footer-title,
+.eb-footer .footer-address,
+.eb-footer .footer-contacts,
+.eb-footer .footer-privacy-column {
+    text-align: center;
 }
+
+/* Center privacy links (SVG + text) */
+.eb-footer .footer-privacy-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Center the entire row */
+.eb-footer .row {
+    text-align: center;
+}
+
+
 
 /* ============================
    PRIVACY LINKS
@@ -124,7 +139,7 @@
 
 @media (max-width: 768px) {
   .eb-footer-section {
-    padding: 20px 0 10px;
+    padding: 0;
   }
     .footer-logo {
         display: none !important;
@@ -140,6 +155,10 @@
     .footer-address,
     .footer-contacts {
         font-size: 15px;
+    }
+
+    footer-copy {
+        padding-bottom: 40px;    
     }
 }
 
@@ -218,7 +237,7 @@
 .footer-mobile .footer-address,
 .footer-mobile .footer-contacts,
 .footer-mobile .footer-privacy-mobile {
-    align-items: center;
+    align-items: center !important;
 }
 
 /* ============================
@@ -226,13 +245,16 @@
 ============================ */
 .footer-map-wrapper {
     width: 100%;
-    padding: 30px 0;
     background: #f7f7f7;
     flex: 1;
 }
 
 .footer-map-container {
-  
+    height: 100%;
+}
+
+.footer-map-container p {
+    height: 100%;
 }
 
 .footer-map-iframe {
@@ -241,3 +263,50 @@
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
+
+
+.back-to-top {
+  background: #f7c948;
+  color: #003b73;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.back-to-top:hover {
+  background: #ffd75e;
+}
+
+@media (max-height: 700px) {
+    .footer-title {
+        font-size: 18px;
+    }
+
+    .footer-mobile .footer-title {
+        margin-top: 12px;
+    }
+
+    .footer-address, .footer-contacts {
+        font-size: 12px;
+    }
+
+    .footer-privacy-link {
+        font-size: 12px;
+    }
+
+    .back-to-top{
+        position: absolute;
+        bottom: 20px;
+    }
+
+    .footer-privacy-mobile {
+        gap: 8px;
+    }
+}
+
+

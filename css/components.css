@@ -7,10 +7,19 @@
 }
 
 .step-left {
-  padding: 100px 100px 20px 100px !important;
   display: flex;
   flex-direction: column;
+  padding: 100px !important;
 }
+
+.step-section{
+  overflow-y: auto;
+}
+
+.step-right{
+  max-height: calc(100vh - 80px) !important;;
+}
+
 
 .product-header {
   display: flex;
@@ -37,7 +46,7 @@
   font-weight: 700;
   color: var(--primary-color);
   position: relative;
-  padding-left: 1.8rem;
+  margin-bottom: -28px;
 }
 
 .step-number::before {
@@ -49,12 +58,13 @@
   font-size: 1.2rem;
   color: var(--primary-color) !important;
   opacity: 0.9;
+  margin-right: 1.8rem;
 }
 
 .star {
-    margin: 30px 0;
-    font-size: 38px;
-    margin-top: auto;
+    font-size: 34px;
+    position: relative;
+    z-index: 9999;
 }
 
 .next-step {
@@ -109,24 +119,39 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 100% !important;
+  height: calc(100dvh - 80px) !important;
   display: flex;
-      color: #fff;
+  color: #fff;
+  padding-top: 70px;
 }
 
 .process-wrapper {
   position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding-left: 80px;
+  padding-left: 90px;
+  padding-top: 22px;
+}
+
+.process-wrapper > img {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  height: calc(100% - 186px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.process-step a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .home-section {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 100% !important;
+  height: calc(100dvh - 80px) !important;
   display: flex;
+  padding: 20px;
 }
 
 .section-bg-img {
@@ -154,8 +179,6 @@
     font-weight: 700;
     z-index: 5;
     position: relative;
-    padding-left: 20px;
-    padding-right: 20px;
     margin-top: auto;
 }
 
@@ -166,7 +189,6 @@
     margin-top: auto; 
     margin-bottom: 130px;
     z-index: 5;
-    padding-left: 20px;
 }
 
 /* CURVA LUNGA TIPO ")" */
@@ -181,7 +203,7 @@
 }
 
 .process-step {
-  margin-bottom: 54px;
+  margin-bottom: 30px;
   position: relative;
   z-index: 5;
 }
@@ -205,7 +227,7 @@
 }
 
 .shift-left {
-  margin-left: 60px;
+  margin-left: 46px;
 }
 
 .process-intro {
@@ -248,7 +270,7 @@
 /* =========================================
    MAP WRAPPER (NON FOOTER)
 ========================================= */
-.footer-map-wrapper {
+/* .footer-map-wrapper {
     width: 100%;
     padding: 30px 0;
     background: #f7f7f7;
@@ -263,7 +285,7 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
+} */
 
 /* =========================================
    SWIPER
@@ -278,14 +300,17 @@
   overflow: visible;
 }
 
+@media (min-width: 992px) {
+  .step-number {
+    padding-left: 1.8rem;
+  }
+}
+
 /* =========================================
    RESPONSIVE — COMPONENTS
 ========================================= */
 @media (max-width: 768px) {
 
-    .step-title {
-        padding-bottom: 0px;
-    }
 
   /* Step */
   .step-left{
@@ -317,15 +342,26 @@
   }
 
   .step-left-subtitle{
-    padding-top: 5px !important;
     font-size: 48px !important;
     font-weight: 700 !important;
+    margin-top: auto;
   }
 
   .star{
     text-align: center;
+    font-size: 28px;
   }
 
+}
+
+.index-number{
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.index-text > h3{
+  font-size: 20px;
+  font-weight: 700;
 }
 
 /* HERO CAROUSEL 55 (component) */
@@ -334,14 +370,14 @@
   .hero-carousel-55 {
     position: relative;
     width: 100%;
-    height: calc(100vh - 90px) !important;
+    height: calc(100dvh - 80px) !important;
     overflow: hidden;
   }
 
   .hero-carousel-55 #heroCarousel,
   .hero-carousel-55 #heroCarousel .carousel-inner,
   .hero-carousel-55 #heroCarousel .carousel-item {
-    height: calc(100vh - 90px) !important;
+    height: calc(100dvh - 80px) !important;
   }
 
   .hero-carousel-55 .mobile-hero__bg {
@@ -368,7 +404,8 @@
     flex-direction: column;
     justify-content: flex-start;
     top: 30%;
-    padding-left: 40px;
+    padding: 20px;
+    height: 562px;
   }
 
   .hero-carousel-55 .mobile-carousel__title {
@@ -389,18 +426,99 @@
 
   .paragraph {
     font-size: 20px;
+    margin-top: auto;
+    margin-bottom: 10px;
   }
 
   .step-number{
-    margin-top: clamp(0px, 5vh, 100px);
+    margin-top: auto;
   }
 
   .product-header{
     flex-direction: column;
     align-items: flex-start;
-    margin-top: clamp(0px, 5vh, 100px);
-    margin-bottom: clamp(0px, 5vh, 40px);
+    margin-top: auto;
   }
+}
+
+@media (max-height: 700px) {
+  .index-number{
+    font-size: 48px;
+  }
+  .section-paragraph {
+    font-size: 16px;
+  }
+
+  .step-left-subtitle {
+    padding-top: 0px;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+  }
+
+  .paragraph {
+    font-size: 16px;
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
+
+  .process-section{
+    padding-top: 48px;
+  }
+
+  .process-wrapper {
+    padding-top: 12px;
+    padding-left: 68px;
+    padding-top: 8px;
+  }
+
+  .process-wrapper > img {
+    height: calc(100% - 148px);
+  }
+
+  .index-text > h3 {
+    font-size: 16px;
+  }
+
+  .process-step {
+    margin-bottom: 20px;
+  }
+
+  .hero-carousel-55 .mobile-carousel__title {
+      font-size: 52px;
+      font-weight: 700;
+      bottom: 16px;
+      position: relative;
+      z-index: 3;
+  }
+
+  .hero-carousel-55 .mobile-carousel__subtitle {
+    font-size: 30px;
+  }
+
+  .hero-carousel-55 .mobile-carousel__content{
+    
+  }
+
+  .section-title{
+    font-size: 48px;
+  }
+
+  .step-title {
+    font-size: 42px;
+  }
+
+  .step-number {
+    font-size: 116px;
+  }
+
+  .mobile-hero__subtitle {
+    font-size: 20px;
+  }
+
+  .mobile-hero__title{
+    font-size: 48px;
+  }
+
 }
 
 

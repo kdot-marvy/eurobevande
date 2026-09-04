@@ -28,6 +28,14 @@ $sec3_title      = get_field('chi_siamo_section3_title');
 $sec3_subtitle   = get_field('chi_siamo_section3_subtitle');
 $sec3_paragraph  = get_field('chi_siamo_section3_paragraph');
 $sec3_image      = get_field('chi_siamo_section3_image');
+
+// EVENTS
+$events_title      = get_field('chi_siamo_events_title');
+$events_subtitle   = get_field('chi_siamo_events_subtitle');
+$events_paragraph  = get_field('chi_siamo_events_paragraph');
+$events_image      = get_field('chi_siamo_events_image');
+
+
 ?>
 
 <div class="page-wrapper">
@@ -53,12 +61,16 @@ $sec3_image      = get_field('chi_siamo_section3_image');
                         </div>
                     </div>
 
-                    <div class="hero-overlay"></div>
 
                     <div class="hero-center">
-                        <div class="hero-text text-white">
-                            <h1 class="fw-bold"><?php echo esc_html($hero_title); ?></h1>
-                            <div class="paragraph mt-3"><?php echo wp_kses_post($hero_sub); ?></div>
+                        <div class="text-section hero-text-bg">
+
+                            <div class="hero-text text-white">
+                                <h1><?php echo esc_html($hero_title); ?></h1>
+                                <div class="paragraph"><?php echo wp_kses_post($hero_sub); ?></div>
+                                <div class="star">★</div>
+                            </div>
+                            <img class="hero-bg-svg" src="<?php echo get_template_directory_uri(); ?>/img/sfumatura.svg" alt="curve" />
                         </div>
                     </div>
 
@@ -77,8 +89,9 @@ $sec3_image      = get_field('chi_siamo_section3_image');
 
                     <div class="mobile-hero__content">
                         <div class="mobile-hero__overlay"></div>
-                        <h1 class="mobile-hero__title s48"><?php echo esc_html($hero_title); ?></h1>
+                        <h1 class="mobile-hero__title fs-42"><?php echo esc_html($hero_title); ?></h1>
                         <div class="mobile-hero__subtitle"><?php echo wp_kses_post($hero_sub); ?></div>
+                        <div class="star mobile-version">★</div>
                     </div>
 
                 </section>
@@ -92,10 +105,12 @@ $sec3_image      = get_field('chi_siamo_section3_image');
                         <div class="row h-100">
 
                             <div class="col-lg-6 step-left">
-                                <h2 class="step-title"><?php echo esc_html($sec1_title); ?></h2>
-                                <h2 class="fw-bold"><?php echo esc_html($sec1_subtitle); ?></h2>
+                                <div class="product-header desktop-version">
+                                    <h2 class="step-title"><?php echo esc_html($sec1_title); ?></h2>
+                                </div>
+                                <h2 class="step-left-subtitle "><?php echo esc_html($sec1_subtitle); ?></h2>
                                 <div class="paragraph"><?php echo wp_kses_post($sec1_paragraph); ?></div>
-                                <div class="star">★</div>
+                                <div class="star mobile-version">★</div>
                             </div>
 
                             <div class="col-lg-6 step-right p-0">
@@ -116,10 +131,20 @@ $sec3_image      = get_field('chi_siamo_section3_image');
                         <div class="row h-100">
 
                             <div class="col-lg-6 step-left">
-                                <h2 class="step-title"><?php echo esc_html($sec2_title); ?></h2>
-                                <h2 class="fw-bold"><?php echo esc_html($sec2_subtitle); ?></h2>
+
+                                <div class="product-header">
+                                     <?php if (wp_is_mobile()) : ?>
+                                        <h2 class="step-left-subtitle"><?php echo esc_html($sec2_subtitle); ?></h2>
+                                    <?php endif; ?>
+                                    <?php if (!wp_is_mobile()) : ?>
+                                        <h2 class="step-title"><?php echo esc_html($sec2_title); ?></h2>
+                                    <?php endif; ?>
+
+                                </div>
+                                
+                                <h2 class="step-left-subtitle desktop-version"><?php echo esc_html($sec2_subtitle); ?></h2>
                                 <div class="paragraph"><?php echo wp_kses_post($sec2_paragraph); ?></div>
-                                <div class="star">★</div>
+                                <div class="star mobile-version">★</div>
                             </div>
 
                             <div class="col-lg-6 step-right p-0">
@@ -140,10 +165,12 @@ $sec3_image      = get_field('chi_siamo_section3_image');
                         <div class="row h-100">
 
                             <div class="col-lg-6 step-left">
-                                <h2 class="step-title"><?php echo esc_html($sec3_title); ?></h2>
-                                <h2 class="fw-bold"><?php echo esc_html($sec3_subtitle); ?></h2>
+                                <div class="product-header  desktop-version">
+                                    <h2 class="step-title"><?php echo esc_html($sec3_title); ?></h2>
+                                </div>
+                                <h2 class="step-left-subtitle"><?php echo esc_html($sec3_subtitle); ?></h2>
                                 <div class="paragraph"><?php echo wp_kses_post($sec3_paragraph); ?></div>
-                                <div class="star">★</div>
+                                <div class="star mobile-version">★</div>
                             </div>
 
                             <div class="col-lg-6 step-right p-0">
@@ -157,11 +184,56 @@ $sec3_image      = get_field('chi_siamo_section3_image');
                 </section>
             </div>
 
-            <!-- FOOTER -->
+            <!-- EVENTS -->
             <div class="swiper-slide">
-                <?php get_template_part('template-parts/footer-vertical'); ?>
+                <section class="page-section step-section" id="offerte">
+                    <div class="container-fluid h-100">
+                        <div class="row h-100">
+
+                            <div class="col-lg-6 step-left">
+
+                                <div class="product-header">
+                                    <?php if (wp_is_mobile()) : ?>
+                                        <h2 class="step-left-subtitle"><?php echo esc_html($events_subtitle); ?></h2>
+                                    <?php endif; ?>
+                                    <?php if (!wp_is_mobile()) : ?>
+                                        <h2 class="step-title"><?php echo esc_html($events_title); ?></h2>
+                                    <?php endif; ?>
+
+                                    <a href="/euro-bevande/galleria/" class="product-pdf-link">
+                                        SFOGLIA LA GELLERY
+                                    </a>
+                                </div>
+
+                                <h2 class="step-left-subtitle desktop-version"><?php echo esc_html($events_subtitle); ?></h2>
+                                <div class="paragraph"><?php echo wp_kses_post($events_paragraph); ?></div>
+                                <div class="star mobile-version">★</div>
+                            </div>
+
+                            <div class="col-lg-6 step-right p-0">
+                                <?php if(!empty($events_image)): ?>
+                                    <img src="<?php echo esc_url($events_image['url']); ?>" alt="">
+                                <?php endif; ?>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
             </div>
 
+            <!-- FOOTER -->
+                <?php get_template_part('template-parts/footer-vertical'); ?>
+
+        </div>
+        
+                    <!-- DOTS CUSTOM -->
+        <div class="side-dots">
+            <div class="dot" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+            <div class="dot" data-index="3"></div>
+            <div class="dot" data-index="4"></div>
+            <div class="dot" data-index="5"></div>
         </div>
     </div>
 </div>

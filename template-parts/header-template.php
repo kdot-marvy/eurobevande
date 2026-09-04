@@ -72,7 +72,7 @@ $header_id = $header_page ? $header_page->ID : 0;
             <a class="nav-link <?php if(is_page('lavora-con-noi')) echo 'active'; ?>" href="/euro-bevande/lavora-con-noi">LAVORA CON NOI</a>
 
             <div class="mega-menu small-dropdown">
-              <a href="/euro-bevande/lavora-con-noi#posizioni">Candidati</a>
+              <a href="/euro-bevande/lavora-con-noi#candidati">Candidati</a>
             </div>
           </li>
 

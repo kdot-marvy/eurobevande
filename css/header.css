@@ -26,6 +26,7 @@
   min-width: 220px;
   border-radius: 6px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  z-index: 100;
 }
 
 .mega-menu.small-dropdown a {
@@ -50,7 +51,7 @@
     display: none; /* hide by default */
     box-shadow: none;
     background: transparent;
-    padding: 10px 0;
+    padding: 10px 70px;
   }
 
   /* show submenu only when parent is active */
@@ -81,15 +82,15 @@
 .hero-services {
   position: absolute;
   height: 180px;
-  bottom: 200px;
+  bottom: 230px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 300px;
+  gap: 250px;
   align-items: center;
   z-index: 4;
   color: white;
-  padding-left: 100px !important;
+  padding-left: 230px !important;
   padding-right: 100px !important;
 }
 
@@ -143,8 +144,15 @@
     inset: 0;
     z-index: 2;
 
-    /* Il blu che hai scelto */
-    background: rgba(33, 85, 168, 0.55); /* #2155A8 con opacità */
+    background: rgba(33, 85, 168, 0.55);
+}
+
+.hero-overlay-light {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    background: rgba(33, 85, 168, 0.25);
 }
 
 .hero-contacts {
@@ -182,7 +190,7 @@
 .index-hero-text {
   position: absolute;
   z-index: 3;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 750px;
@@ -209,14 +217,34 @@
   margin: 0 auto;
 }
 
+.hero-text-bg {
+    position: relative;
+}
+
+.hero-bg-svg {
+    position: absolute;
+    bottom: -210px;
+    left: 0;
+    width: 800px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.text-section{
+  margin-top: auto;
+  margin-bottom: 50px;
+}
+
+
+
 .hero-text h1 {
-  font-size: 70px;
+  font-size: 64px;
   font-weight: 700;
 }
 
 .hero-text p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 24px;
+  line-height: 1.3;
 }
 
 .hero-center {
@@ -410,7 +438,7 @@
     background: var(--primary-color);
     padding: 6px 0;
     position: fixed;
-    top: 110px;
+    top: 80px;
     left: 0;
     width: 100%;
     z-index: 9998;
@@ -502,7 +530,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 100% !important;
+    height: calc(100dvh - 80px) !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -535,7 +563,8 @@
     color: #fff;
     max-width: 100%;
     position: relative;
-    height: 100%
+    height: calc(100dvh - 80px) !important;
+    padding: 20px;
   }
 
   .mobile-hero__title {
@@ -543,8 +572,6 @@
     font-weight: 700;
     z-index: 5;
     position: relative;
-    padding-left: 20px;
-    padding-right: 20px;
     margin-top: auto;
   }
 
@@ -553,9 +580,7 @@
     font-size: 24px;
     opacity: 0.9;
     margin-top: auto; 
-    margin-bottom: 130px;
     z-index: 5;
-    padding-left: 20px;
   }
 
   .mobile-hero__cta {
@@ -576,14 +601,14 @@
   .hero-carousel-55 {
     position: relative;
     width: 100%;
-    height: calc(100vh - 90px) !important;
+    height: calc(100dvh - 80px) !important;
     overflow: hidden;
   }
 
   .hero-carousel-55 #heroCarousel,
   .hero-carousel-55 #heroCarousel .carousel-inner,
   .hero-carousel-55 #heroCarousel .carousel-item {
-    height: calc(100vh - 90px) !important;
+    height: calc(100dvh - 80px) !important;
   }
 
   .hero-carousel-55 .mobile-hero__bg {
@@ -704,4 +729,14 @@
   font-weight: 400 !important;
 }
 
+/* Arrow rotation when submenu is open */
+@media (max-width: 768px) {
+  .nav-item.dropdown-mega:has(.mega-menu.small-dropdown) > .nav-link::after {
+    transition: transform 0.25s ease;
+  }
+
+  .nav-item.dropdown-mega.open > .nav-link::after {
+    transform: translateY(-50%) rotate(90deg); /* › diventa ˅ */
+  }
+}
 

@@ -59,8 +59,9 @@ get_header();
                 <div class="mobile-hero__overlay"></div>
 
               <div class="mobile-hero__content">
-                <h1 class="mobile-hero__title  s48"><?php echo esc_html($hero_title); ?></h1>
-                <div class="mobile-hero__subtitle text24"><?php echo wp_kses_post($hero_sub); ?></div>
+                <h1 class="mobile-hero__title  fs-42"><?php echo esc_html($hero_title); ?></h1>
+                <div class="mobile-hero__subtitle fs-20"><?php echo wp_kses_post($hero_sub); ?></div>
+                <div class="star mobile-version">★</div>
               </div>
 
             </section>
@@ -85,12 +86,17 @@ get_header();
                   </div>
                 </div>
 
-                <div class="hero-center">
-                  <div class="hero-text text-white">
-                    <h1 class="fw-bold"><?php echo esc_html($hero_title); ?></h1>
-                    <div class="paragraph"><?php echo wp_kses_post($hero_sub); ?></div>
-                  </div>
-                </div>
+                    <div class="hero-center">
+                        <div class="text-section hero-text-bg">
+
+                            <div class="hero-text text-white">
+                                <h1><?php echo esc_html($hero_title); ?></h1>
+                                <div class="paragraph"><?php echo wp_kses_post($hero_sub); ?></div>
+                                <div class="star">★</div>
+                            </div>
+                            <img class="hero-bg-svg" src="<?php echo get_template_directory_uri(); ?>/img/sfumatura.svg" alt="curve" />
+                        </div>
+                    </div>
 
               </section>
             </div>
@@ -100,14 +106,15 @@ get_header();
           <!-- STEP 1 -->
           <div class="swiper-slide">
             <section class="page-section step-section" id="servizio1">
-              <div class="container-fluid h-100">
-                <div class="row h-100">
+              <div class="container-fluid mobile-full">
+                <div class="row mobile-full">
 
                   <div class="col-lg-6 step-left">
                     <h2 class="step-title desktop-version">Il nostro metodo</h2>
                     <div class="step-number"><?php echo esc_html($step1_number); ?></div>
                     <h2 class="step-title"><?php echo esc_html($step1_title); ?></h2>
                     <div class="paragraph"><?php echo wp_kses_post($step1_desc); ?></div>
+                    <div class="star mobile-version">★</div>
                     <?php if($step1_next): ?>
                       <div class="next-step desktop-version"><?php echo esc_html($step1_next); ?></div>
                     <?php endif; ?>
@@ -128,14 +135,15 @@ get_header();
           <!-- STEP 2 -->
           <div class="swiper-slide">
             <section class="page-section step-section" id="servizio2">
-              <div class="container-fluid h-100">
-                <div class="row h-100">
+              <div class="container-fluid mobile-full">
+                <div class="row mobile-full">
 
                   <div class="col-lg-6 step-left">
                     <h2 class="step-title desktop-version">Il nostro metodo</h2>
                     <div class="step-number"><?php echo esc_html($step2_number); ?></div>
                     <h2 class="step-title"><?php echo esc_html($step2_title); ?></h2>
                     <div class="paragraph"><?php echo wp_kses_post($step2_desc); ?></div>
+                    <div class="star mobile-version">★</div>
                     <?php if($step2_next): ?>
                       <div class="next-step desktop-version"><?php echo esc_html($step2_next); ?></div>
                     <?php endif; ?>
@@ -156,14 +164,15 @@ get_header();
           <!-- STEP 3 -->
           <div class="swiper-slide">
             <section class="page-section step-section" id="servizio3">
-              <div class="container-fluid h-100">
-                <div class="row h-100">
+              <div class="container-fluid mobile-full">
+                <div class="row mobile-full">
 
                   <div class="col-lg-6 step-left">
                     <h2 class="step-title desktop-version">Il nostro metodo</h2>
                     <div class="step-number"><?php echo esc_html($step3_number); ?></div>
                     <h2 class="step-title"><?php echo esc_html($step3_title); ?></h2>
                     <div class="paragraph"><?php echo wp_kses_post($step3_desc); ?></div>
+                    <div class="star mobile-version">★</div>
                     <?php if($step3_next): ?>
                       <div class="next-step desktop-version"><?php echo esc_html($step3_next); ?></div>
                     <?php endif; ?>
@@ -184,14 +193,15 @@ get_header();
           <!-- STEP 4 -->
           <div class="swiper-slide">
             <section class="page-section step-section" id="servizio4">
-              <div class="container-fluid h-100">
-                <div class="row h-100">
+              <div class="container-fluid mobile-full">
+                <div class="row mobile-full">
 
                   <div class="col-lg-6 step-left">
                     <h2 class="step-title desktop-version">Il nostro metodo</h2>
                     <div class="step-number"><?php echo esc_html($step4_number); ?></div>
                     <h2 class="step-title"><?php echo esc_html($step4_title); ?></h2>
                     <div class="paragraph"><?php echo wp_kses_post($step4_desc); ?></div>
+                    <div class="star mobile-version">★</div>
                   </div>
 
                   <div class="col-lg-6 step-right p-0">
@@ -207,12 +217,20 @@ get_header();
 
 
           <!-- FOOTER -->
-          <div class="swiper-slide">
             <?php get_template_part('template-parts/footer-vertical'); ?>
-          </div>
-
 
         </div>
+
+                    <!-- DOTS CUSTOM -->
+        <div class="side-dots">
+            <div class="dot" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+            <div class="dot" data-index="3"></div>
+            <div class="dot" data-index="4"></div>
+            <div class="dot" data-index="5"></div>
+        </div>
+
       </div>
 </div>
 

@@ -87,6 +87,25 @@ add_filter('pre_get_posts', function($query) {
 add_action('admin_post_nopriv_invia_candidatura', 'eurobevande_handle_candidatura');
 add_action('admin_post_invia_candidatura', 'eurobevande_handle_candidatura');
 
+function add_slug_body_class( $classes ) {
+    if ( is_page() ) {
+        $slug = basename( get_permalink() );
+        $classes[] = 'page-slug-' . $slug;
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );
+
+add_filter( 'language_attributes', 'add_slug_to_html' );
+function add_slug_to_html( $output ) {
+    if ( is_page() ) {
+        $slug = basename( get_permalink() );
+        $output .= ' class="page-slug-' . $slug . '"';
+    }
+    return $output;
+}
+
+
 function eurobevande_handle_candidatura() {
 
     require_once(ABSPATH . 'wp-admin/includes/file.php');
@@ -234,10 +253,20 @@ function eurobevande_assets() {
         true
     );
 
+
+    wp_enqueue_script(
+        'gsap',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
+        array(),
+        null,
+        true
+    );
+
+
     wp_enqueue_script(
         'main-js',
         get_template_directory_uri() . '/js/script.js',
-        array('swiper-js'),
+        array('swiper-js', 'gsap'),
         null,
         true
     );

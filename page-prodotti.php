@@ -45,6 +45,14 @@ $vino_subtitle   = get_field('prodotti_vino_subtitle');
 $vino_paragraph  = get_field('prodotti_vino_paragraph');
 $vino_image      = get_field('prodotti_vino_image');
 $vino_pdf        = get_field('prodotti_vino_pdf') ?: '';
+
+$slides_count = 0;
+
+if (!wp_is_mobile()) $slides_count++;
+if (wp_is_mobile()) $slides_count++;
+
+$slides_count += 7;
+
 ?>
 
 <div class="page-wrapper">
@@ -70,12 +78,15 @@ $vino_pdf        = get_field('prodotti_vino_pdf') ?: '';
                         </div>
                     </div>
 
-                    <div class="hero-overlay"></div>
-
                     <div class="hero-center">
-                        <div class="hero-text text-white">
-                            <h1 class="fw-bold"><?php echo esc_html($hero_title); ?></h1>
-                            <div class="paragraph"><?php echo wp_kses_post($hero_sub); ?></div>
+                        <div class="text-section hero-text-bg">
+
+                            <div class="hero-text text-white">
+                                <h1><?php echo esc_html($hero_title); ?></h1>
+                                <div class="paragraph"><?php echo wp_kses_post($hero_sub); ?></div>
+                                <div class="star">★</div>
+                            </div>
+                            <img class="hero-bg-svg" src="<?php echo get_template_directory_uri(); ?>/img/sfumatura.svg" alt="curve" />
                         </div>
                     </div>
 
@@ -93,8 +104,10 @@ $vino_pdf        = get_field('prodotti_vino_pdf') ?: '';
                     <?php endif; ?>
 
                     <div class="mobile-hero__content">
+                        <div class="mobile-hero__overlay"></div>
                         <h1 class="mobile-hero__title"><?php echo esc_html($hero_title); ?></h1>
                         <div class="mobile-hero__subtitle"><?php echo wp_kses_post($hero_sub); ?></div>
+                        <div class="star mobile-version mt-auto">★</div>
                     </div>
 
                 </section>
@@ -126,7 +139,7 @@ $vino_pdf        = get_field('prodotti_vino_pdf') ?: '';
 
                                 <h2 class="step-left-subtitle desktop-version"><?php echo esc_html($offerte_subtitle); ?></h2>
                                 <div class="paragraph"><?php echo wp_kses_post($offerte_paragraph); ?></div>
-                                <div class="star">★</div>
+                                <div class="star mobile-version">★</div>
                             </div>
 
                             <div class="col-lg-6 step-right p-0">
@@ -165,7 +178,7 @@ $vino_pdf        = get_field('prodotti_vino_pdf') ?: '';
 
                                 <h2 class="step-left-subtitle desktop-version"><?php echo esc_html($birra_subtitle); ?></h2>
                                 <div class="paragraph"><?php echo wp_kses_post($birra_paragraph); ?></div>
-                                <div class="star">★</div>
+                                <div class="star mobile-version">★</div>
                             </div>
 
                             <div class="col-lg-6 step-right p-0">
@@ -204,7 +217,7 @@ $vino_pdf        = get_field('prodotti_vino_pdf') ?: '';
 
                                 <h2 class="step-left-subtitle  desktop-version"><?php echo esc_html($vino_subtitle); ?></h2>
                                 <div class="paragraph"><?php echo wp_kses_post($vino_paragraph); ?></div>
-                                <div class="star">★</div>
+                                <div class="star mobile-version">★</div>
                             </div>
 
                             <div class="col-lg-6 step-right p-0">
@@ -243,7 +256,7 @@ $vino_pdf        = get_field('prodotti_vino_pdf') ?: '';
 
                                 <h2 class="step-left-subtitle  desktop-version"><?php echo esc_html($anal_subtitle); ?></h2>
                                 <div class="paragraph"><?php echo wp_kses_post($anal_paragraph); ?></div>
-                                <div class="star">★</div>
+                                <div class="star mobile-version">★</div>
                             </div>
 
                             <div class="col-lg-6 step-right p-0">
@@ -282,7 +295,7 @@ $vino_pdf        = get_field('prodotti_vino_pdf') ?: '';
 
                                 <h2 class="step-left-subtitle  desktop-version"><?php echo esc_html($spir_subtitle); ?></h2>
                                 <div class="paragraph"><?php echo wp_kses_post($spir_paragraph); ?></div>
-                                <div class="star">★</div>
+                                <div class="star mobile-version">★</div>
                             </div>
 
                             <div class="col-lg-6 step-right p-0">
@@ -297,13 +310,19 @@ $vino_pdf        = get_field('prodotti_vino_pdf') ?: '';
             </div>
 
 
-            <!-- FOOTER -->
-            <div class="swiper-slide">
                 <?php get_template_part('template-parts/footer-vertical'); ?>
-            </div>
 
         </div>
+
+            <!-- DOTS CUSTOM -->
+        <div class="side-dots">
+            <?php for ($i = 0; $i < $slides_count; $i++): ?>
+                <div class="dot" data-index="<?php echo $i; ?>"></div>
+            <?php endfor; ?>
+        </div>
     </div>
+
+    
 </div>
 
 <?php get_footer(); ?>
