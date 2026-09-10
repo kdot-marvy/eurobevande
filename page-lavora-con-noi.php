@@ -191,12 +191,12 @@ $open_positions = get_field('open_positions');
             <!-- FORM CANDIDATURA -->
             <div class="swiper-slide">
                 <section class="page-section candidatura-section" id="candidati">
-                    <div class="container-fluid h-100">
-                        <div class="row h-100">
+                    <div class="container-fluid mobile-full">
+                        <div class="row mobile-full">
 
                             <div class="col-lg-6 step-left">
 
-                                <form class="mt-auto" id="candidaturaForm"
+                                <form id="candidaturaForm"
                                       action="<?php echo admin_url('admin-post.php'); ?>"
                                       method="post"
                                       enctype="multipart/form-data">
@@ -255,7 +255,7 @@ $open_positions = get_field('open_positions');
                                     <button type="submit" class="btn btn-primary">Invia candidatura</button>
 
                                 </form>
-                                <div class="star mobile-version">★</div>
+                                <div class="star mobile-version mt-auto">★</div>
 
                             </div>
 
