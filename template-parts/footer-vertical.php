@@ -2,6 +2,8 @@
 $footer_page = get_page_by_path('impostazioni-footer');
 $footer_id = $footer_page ? $footer_page->ID : 0;
 $footer_map = get_field('footer_map_iframe', $footer_id);
+$footer_contacts = get_field('footer_right_text', $footer_id);
+$footer_left = get_field('footer_left_text', $footer_id);
 ?>
 
 
@@ -33,23 +35,46 @@ $footer_map = get_field('footer_map_iframe', $footer_id);
                     <div class="row">
 
                         <!-- COLONNA 2: INDIRIZZO -->
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 footer-column">
                             <h3 class="footer-title"><?php the_field('footer_left_title', $footer_id); ?></h3>
-                            <div class="footer-address footer-icons">
-                                <?php the_field('footer_left_text', $footer_id); ?>
-                            </div>
+
+                            <?php 
+                                $rows = get_field('contacts', 'option');
+
+                                if ($footer_left) {
+                                    foreach ($footer_left as $row) {
+                                        $item = g10der_get_sub_field($row, 'item');
+                                        ?>
+                                        <span>
+                                            <?php echo esc_html($item); ?>
+                                        </span>
+                                        <?php
+                                    }
+                                }
+                                ?>
                         </div>
 
                         <!-- COLONNA 3: CONTATTI -->
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 footer-column">
                             <h3 class="footer-title"><?php the_field('footer_right_title', $footer_id); ?></h3>
-                            <div class="footer-contacts footer-icons">
-                                <?php the_field('footer_right_text', $footer_id); ?>
-                            </div>
+                                <?php 
+                                $rows = get_field('contacts', 'option');
+
+                                if ($footer_contacts) {
+                                    foreach ($footer_contacts as $row) {
+                                        $pos = g10der_get_sub_field($row, 'contacts');
+                                        ?>
+                                        <span>
+                                            <?php echo esc_html($pos); ?>
+                                        </span>
+                                        <?php
+                                    }
+                                }
+                                ?>
                         </div>
 
                         <!-- COLONNA 4: PRIVACY -->
-                        <div class="col-lg-4 footer-privacy-column">
+                        <div class="col-lg-4 footer-column">
                             <h3 class="footer-title">Privacy</h3>
 
                             <a href="/privacy-sito" class="footer-privacy-link" target="_blank">
@@ -84,15 +109,42 @@ $footer_map = get_field('footer_map_iframe', $footer_id);
                 <!-- MOBILE VERSION -->
                 <div class="footer-mobile d-md-none text-center">
 
-                    <div>
+                    <div class="footer-column-mobile">
                         <h3 class="footer-title"><?php the_field('footer_left_title', $footer_id); ?></h3>
-                        <div class="footer-address footer-icons"><?php the_field('footer_left_text', $footer_id); ?></div>
+
+                            <?php 
+                                $rows = get_field('contacts', 'option');
+
+                                if ($footer_left) {
+                                    foreach ($footer_left as $row) {
+                                        $item = g10der_get_sub_field($row, 'item');
+                                        ?>
+                                        <span>
+                                            <?php echo esc_html($item); ?>
+                                        </span>
+                                        <?php
+                                    }
+                                }
+                                ?>
                     </div>
-                    <div>
-                        <h3 class="footer-title"><?php the_field('footer_right_title', $footer_id); ?></h3>
-                        <div class="footer-contacts footer-icons"><?php the_field('footer_right_text', $footer_id); ?></div>
+                    <div class="footer-column-mobile">
+                         <h3 class="footer-title"><?php the_field('footer_right_title', $footer_id); ?></h3>
+                                <?php 
+                                $rows = get_field('contacts', 'option');
+
+                                if ($footer_contacts) {
+                                    foreach ($footer_contacts as $row) {
+                                        $pos = g10der_get_sub_field($row, 'contacts');
+                                        ?>
+                                        <span>
+                                            <?php echo esc_html($pos); ?>
+                                        </span>
+                                        <?php
+                                    }
+                                }
+                                ?>
                     </div>
-                    <div class="footer-privacy-mobile">
+                    <div class="footer-column-mobile">
                         <h3 class="footer-title">Privacy</h3>
 
                         <a href="/privacy-sito" class="footer-privacy-link" target="_blank">

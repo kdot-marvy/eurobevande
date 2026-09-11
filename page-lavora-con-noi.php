@@ -91,7 +91,7 @@ $open_positions = get_field('open_positions');
                         <div class="row h-100">
 
                             <div class="col-lg-6 step-left">
-                                <h2 class="step-title mt-auto"><?php echo esc_html($positions_title); ?></h2>
+                                <h2 class="step-title"><?php echo esc_html($positions_title); ?></h2>
                                 <p class="subtitle"><?php echo esc_html($positions_subtitle); ?></p>
                                 <div class="paragraph">
                                     <?php echo wp_kses_post($positions_paragraph); ?>
@@ -110,7 +110,9 @@ $open_positions = get_field('open_positions');
                                             <?php endif; ?>
 
                                             <?php if ($desc) : ?>
-                                                <p><?php echo esc_html($desc); ?></p>
+                                                <div class="paragraph">
+                                                    <p><?php echo esc_html($desc); ?></p>
+                                                </div>
                                             <?php endif; ?>
 
                                         </div>
@@ -139,7 +141,7 @@ $open_positions = get_field('open_positions');
                         <div class="row h-100">
 
                             <div class="col-lg-6 step-left">
-                                <h2 class="step-title mt-auto"><?php echo esc_html($positions_title); ?></h2>
+                                <h2 class="step-title"><?php echo esc_html($positions_title); ?></h2>
                                 <p class="subtitle"><?php echo esc_html($positions_subtitle); ?></p>
                                 <div class="paragraph">
                                     <?php echo wp_kses_post($positions_paragraph); ?>
@@ -166,7 +168,7 @@ $open_positions = get_field('open_positions');
 
                             <div class="col-lg-6 step-left">
 
-                                <h2 class="step-title mt-auto"><?php echo esc_html($form_title); ?></h2>
+                                <h2 class="step-title"><?php echo esc_html($form_title); ?></h2>
 
                                 <div class="paragraph">
                                     <?php echo wp_kses_post($form_description); ?>

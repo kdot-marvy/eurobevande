@@ -110,9 +110,9 @@ get_header();
                 <div class="row mobile-full">
 
                   <div class="col-lg-6 step-left">
-                    <h2 class="step-title desktop-version">Il nostro metodo</h2>
+                    <h2 class="step-title desktop-version">IL NOSTRO METODO</h2>
                     <div class="step-number"><?php echo esc_html($step1_number); ?></div>
-                    <h2 class="step-title"><?php echo esc_html($step1_title); ?></h2>
+                    <h2 class="step-section-title"><?php echo esc_html($step1_title); ?></h2>
                     <div class="paragraph"><?php echo wp_kses_post($step1_desc); ?></div>
                     <div class="star mobile-version">★</div>
                     <?php if($step1_next): ?>
@@ -139,9 +139,9 @@ get_header();
                 <div class="row mobile-full">
 
                   <div class="col-lg-6 step-left">
-                    <h2 class="step-title desktop-version">Il nostro metodo</h2>
+                    <h2 class="step-title desktop-version">IL NOSTRO METODO</h2>
                     <div class="step-number"><?php echo esc_html($step2_number); ?></div>
-                    <h2 class="step-title"><?php echo esc_html($step2_title); ?></h2>
+                    <h2 class="step-section-title"><?php echo esc_html($step2_title); ?></h2>
                     <div class="paragraph"><?php echo wp_kses_post($step2_desc); ?></div>
                     <div class="star mobile-version">★</div>
                     <?php if($step2_next): ?>
@@ -168,9 +168,9 @@ get_header();
                 <div class="row mobile-full">
 
                   <div class="col-lg-6 step-left">
-                    <h2 class="step-title desktop-version">Il nostro metodo</h2>
+                    <h2 class="step-title desktop-version">IL NOSTRO METODO</h2>
                     <div class="step-number"><?php echo esc_html($step3_number); ?></div>
-                    <h2 class="step-title"><?php echo esc_html($step3_title); ?></h2>
+                    <h2 class="step-section-title"><?php echo esc_html($step3_title); ?></h2>
                     <div class="paragraph"><?php echo wp_kses_post($step3_desc); ?></div>
                     <div class="star mobile-version">★</div>
                     <?php if($step3_next): ?>
@@ -197,9 +197,9 @@ get_header();
                 <div class="row mobile-full">
 
                   <div class="col-lg-6 step-left">
-                    <h2 class="step-title desktop-version">Il nostro metodo</h2>
+                    <h2 class="step-title desktop-version">IL NOSTRO METODO</h2>
                     <div class="step-number"><?php echo esc_html($step4_number); ?></div>
-                    <h2 class="step-title"><?php echo esc_html($step4_title); ?></h2>
+                    <h2 class="step-section-title"><?php echo esc_html($step4_title); ?></h2>
                     <div class="paragraph"><?php echo wp_kses_post($step4_desc); ?></div>
                     <div class="star mobile-version">★</div>
                   </div>

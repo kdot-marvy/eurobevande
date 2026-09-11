@@ -70,7 +70,7 @@
 .eb-footer .footer-title,
 .eb-footer .footer-address,
 .eb-footer .footer-contacts,
-.eb-footer .footer-privacy-column {
+.eb-footer .footer-column {
     text-align: center;
 }
 
@@ -92,7 +92,7 @@
 /* ============================
    PRIVACY LINKS
 ============================ */
-.footer-privacy-column {
+.footer-column {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -111,7 +111,7 @@
     text-decoration: underline;
 }
 
-.footer-privacy-mobile {
+.footer-column-mobile {
     display: flex;
     gap: 10px;
 }
@@ -172,7 +172,7 @@
 }
 
 /* PRIVACY */
-.footer-privacy-column {
+.footer-column {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -200,10 +200,10 @@
 }
 
 /* MOBILE PRIVACY */
-.footer-privacy-mobile {
+.footer-column-mobile {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
 }
 
 /* COPYRIGHT (duplicate but kept for completeness) */
@@ -236,7 +236,7 @@
 
 .footer-mobile .footer-address,
 .footer-mobile .footer-contacts,
-.footer-mobile .footer-privacy-mobile {
+.footer-mobile .footer-column-mobile {
     align-items: center !important;
 }
 
@@ -276,6 +276,8 @@
   align-items: center;
   justify-content: center;
   transition: 0.3s;
+  position: absolute;
+  bottom: 20px;
 }
 
 .back-to-top:hover {
@@ -304,8 +306,8 @@
         bottom: 20px;
     }
 
-    .footer-privacy-mobile {
-        gap: 8px;
+    .footer-column-mobile {
+        gap: 4px;
     }
 }
 
