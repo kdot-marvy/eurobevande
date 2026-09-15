@@ -18,7 +18,7 @@ get_header();
                         <!-- MOBILE HERO — SOLO SU MOBILE -->
             <?php if (wp_is_mobile()) : ?>
                 <div class="swiper-slide">
-                        <section class="mobile-hero mobile-version hero-carousel-55">
+                        <section class="mobile-hero hero-carousel-55">
 
                             <div id="heroCarouselMobile" class="carousel slide carousel-fade" data-bs-ride="carousel">
                                 <div class="carousel-inner">
@@ -64,45 +64,46 @@ get_header();
                         <div class="mobile-hero__overlay"></div>
                         <div class="process-wrapper">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/curva-mobile.svg" alt="curve" />
-
-                            <div class="process-step">
-                                <a href="/euro-bevande/servizi#servizio1" class="service">
-                                <div class="index-number">01</div>
-                                <div class="index-text">
-                                    <h3>Analisi & Menu Design</h3>
+                                            
+                            <div class="services-list">
+                                <div class="process-step">
+                                    <a href="/euro-bevande/servizi#servizio1" class="service">
+                                    <div class="index-number">01</div>
+                                    <div class="index-text">
+                                        <h3>Analisi & Menu Design</h3>
+                                    </div>
+                                    </a>
                                 </div>
-                                </a>
-                            </div>
 
-                            <div class="process-step shift-left">
-                                <a href="/euro-bevande/servizi#servizio2" class="service">
-                                    <div class="index-number">02</div>
-                                    <div class="index-text">
-                                        <h3>Formazione & Tasting</h3>
-                                    </div>
-                                </a>
-                            </div>
+                                <div class="process-step shift-left">
+                                    <a href="/euro-bevande/servizi#servizio2" class="service">
+                                        <div class="index-number">02</div>
+                                        <div class="index-text">
+                                            <h3>Formazione & Tasting</h3>
+                                        </div>
+                                    </a>
+                                </div>
 
-                            <div class="process-step shift-left">
-                                <a href="/euro-bevande/servizi#servizio3" class="service">
-                                    <div class="index-number">03</div>
-                                    <div class="index-text">
-                                        <h3>Setup & Attrezzature</h3>
-                                    </div>
-                                </a>
-                            </div>
+                                <div class="process-step shift-left">
+                                    <a href="/euro-bevande/servizi#servizio3" class="service">
+                                        <div class="index-number">03</div>
+                                        <div class="index-text">
+                                            <h3>Setup & Attrezzature</h3>
+                                        </div>
+                                    </a>
+                                </div>
 
-                            <div class="process-step">
-                                <a href="/euro-bevande/servizi#servizio4" class="service">
-                                    <div class="index-number">04</div>
-                                    <div class="index-text">
-                                        <h3>Evoluzione & Partnership</h3>
-                                    </div>
-                                </a>
+                                <div class="process-step">
+                                    <a href="/euro-bevande/servizi#servizio4" class="service">
+                                        <div class="index-number">04</div>
+                                        <div class="index-text">
+                                            <h3>Evoluzione & Partnership</h3>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                            <!-- <div class="star">★</div> -->
-                    </div>
-
+                        </div>
+                        <div class="star mobile-version mt-auto">★</div>
                 </section>
 
             </div>
@@ -116,8 +117,11 @@ get_header();
 
                     <div class="section-intro">
                         <h2 class="section-title"><?php the_field('home_third_title'); ?></h2>
-                        <div class="section-paragraph"><?php echo get_field('home_third_paragraph'); ?></div>
-                                            <div class="star">★</div>
+                        <div class="section-paragraph">
+                        <a class="section-subtitle" href="/euro-bevande/prodotti"><?php the_field('home_third_subtitle'); ?></a>
+                        <?php echo get_field('home_third_paragraph'); ?>
+                    </div>
+                        <div class="star">★</div>
 
                     </div>
 
@@ -134,8 +138,11 @@ get_header();
 
                     <div class="section-intro">
                         <h2 class="section-title"><?php the_field('home_fourth_title'); ?></h2>
-                        <div class="section-paragraph"><?php echo get_field('home_fourth_paragraph'); ?></div>
-                                            <div class="star">★</div>
+                        <div class="section-paragraph">
+                            <a class="section-subtitle" href="/euro-bevande/prodotti"><?php the_field('home_fourth_subtitle'); ?></a>
+                            <?php echo get_field('home_fourth_paragraph'); ?>
+                        </div>
+                            <div class="star">★</div>
 
                     </div>
 

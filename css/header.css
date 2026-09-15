@@ -598,27 +598,6 @@
     z-index: 4;
   }
 
-  .hero-carousel-55 {
-    position: relative;
-    width: 100%;
-    height: calc(100dvh - 80px) !important;
-    overflow: hidden;
-  }
-
-  .hero-carousel-55 #heroCarousel,
-  .hero-carousel-55 #heroCarousel .carousel-inner,
-  .hero-carousel-55 #heroCarousel .carousel-item {
-    height: calc(100dvh - 80px) !important;
-  }
-
-  .hero-carousel-55 .mobile-hero__bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-
-
 }
 
 /* Arrow indicator for dropdown menu items */
