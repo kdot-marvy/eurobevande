@@ -494,9 +494,6 @@
     margin-bottom: 10px;
   }
 
-  .process-section{
-    padding-top: 48px;
-  }
 
   .process-wrapper {
     padding-top: 12px;
@@ -551,13 +548,15 @@
 
 }
 
-.services-list{
-  margin-left: -24px;
-  width: 240px;
+.services-list {
+  margin-left: 0; /* remove negative offset */
+  width: 100%; /* fill the container */
+  max-width: 240px; /* optional: keeps your original size as a limit */
   display: flex;
   flex-direction: column;
-  gap: 44px;
+  gap: clamp(20px, 4vw, 44px); /* responsive gap */
 }
+
 
 .section-subtitle{
   font-size: 26px;
