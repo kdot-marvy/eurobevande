@@ -145,6 +145,7 @@
   position: relative;
   display: flex;
   height: 70%;
+  margin-right: auto;
 }
 
 .process-wrapper > img {
@@ -388,10 +389,6 @@
 
 }
 
-.index-number{
-  font-size: 48px;
-  font-weight: 700;
-}
 
 .index-text > h3{
   font-size: 18px;
@@ -475,9 +472,6 @@
 }
 
 @media (max-height: 700px) {
-  .index-number{
-    font-size: 48px;
-  }
   .section-paragraph {
     font-size: 16px;
   }
@@ -495,20 +489,10 @@
   }
 
 
-  .process-wrapper {
-    padding-top: 12px;
-    padding-left: 68px;
-    padding-top: 8px;
-  }
-
-
   .index-text > h3 {
     font-size: 16px;
   }
 
-  .process-step {
-    margin-bottom: 20px;
-  }
 
   .hero-carousel-55 .mobile-carousel__title {
       font-size: 52px;
@@ -516,6 +500,7 @@
       bottom: 16px;
       position: relative;
       z-index: 3;
+      margin-top: auto;
   }
 
   .hero-carousel-55 .mobile-carousel__subtitle {
@@ -549,18 +534,41 @@
 }
 
 .services-list {
-  margin-left: 0; /* remove negative offset */
-  width: 100%; /* fill the container */
-  max-width: 240px; /* optional: keeps your original size as a limit */
-  display: flex;
-  flex-direction: column;
-  gap: clamp(20px, 4vw, 44px); /* responsive gap */
-}
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(36px, 6.5vw, 64px); /* slightly bigger gap */  
+  }
+
 
 
 .section-subtitle{
   font-size: 26px;
   font-weight: 600;
   color: #ffffff;
+}
+
+/* Step container */
+.process-step {
+    display: flex;
+    align-items: center;
+}
+
+.index-number {
+    font-size: clamp(44px, 7.5vw, 76px); /* slightly bigger */
+    font-weight: 700;
+    line-height: 1;
+}
+
+.index-text h3 {
+    font-size: clamp(19px, 3.7vw, 27px); /* slightly bigger */
+    font-weight: 600;
+}
+
+
+
+/* Shift-left becomes responsive instead of fixed */
+.shift-left {
+    margin-left: clamp(18px, 5vw, 40px); /* slightly more shift */
 }
 
