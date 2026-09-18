@@ -45,13 +45,31 @@ get_header();
 
                 <div class="swiper-slide">
 
-                    <section class="home-section">
+                    <section class="home-second-section">
                                 <img class="section-bg-img" src="<?php echo  get_field('home_second_section_image')['url']; ?>" alt="">
                                 <div class="mobile-hero__overlay"></div>
-                            <div class="section-intro">
+                            <div class="section-intro mt-auto px-20">
                                 <h2 class="section-title s48"><?php the_field('home_second_title'); ?></h2>
                                 <div class="section-paragraph fs-20"><?php echo get_field('home_second_paragraph'); ?></div>
+                            </div>
+                            <div class="short-curve-svg">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/curva-mob-short.svg" alt="curve" />
+                                <div class="services-list">
+                                    <div class="process-step">
+                                        <a href="/euro-bevande/servizi#servizio1" class="service">
+                                        <div class="index-number">01</div>
+                                        <div class="index-text">
+                                            <h3>Analisi & Menu Design</h3>
+                                        </div>
+                                        </a>
+                                    </div>
 
+                                    <div class="process-step shift-left">
+                                        <a href="/euro-bevande/servizi#servizio2" class="service">
+                                            <div class="index-number">02</div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                     </section>
 
@@ -62,7 +80,7 @@ get_header();
                 <section class="process-section">
                         <img class="section-bg-img" src="<?php echo  get_field('home_second_section_image')['url']; ?>" alt="">
                         <div class="mobile-hero__overlay"></div>
-                        <div class="process-wrapper">
+                        <div class="process-wrapper mt-auto">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/curva-mobile.svg" alt="curve" />
                                             
                             <div class="services-list">
