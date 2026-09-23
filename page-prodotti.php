@@ -51,7 +51,7 @@ $slides_count = 0;
 if (!wp_is_mobile()) $slides_count++;
 if (wp_is_mobile()) $slides_count++;
 
-$slides_count += 7;
+$slides_count += 6;
 
 ?>
 
@@ -316,9 +316,6 @@ $slides_count += 7;
 
             <!-- DOTS CUSTOM -->
         <div class="side-dots">
-            <?php for ($i = 0; $i < $slides_count; $i++): ?>
-                <div class="dot" data-index="<?php echo $i; ?>"></div>
-            <?php endfor; ?>
         </div>
     </div>
 

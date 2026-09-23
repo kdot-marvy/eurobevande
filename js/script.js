@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* -----------------------------
-     SWIPER (tuo codice)
+     SWIPER
   ----------------------------- */
   const swiper = new Swiper('.mainSwiper', {
     direction: 'vertical',
@@ -14,24 +14,73 @@ document.addEventListener("DOMContentLoaded", () => {
     resistanceRatio: 0.2,
     allowTouchMove: true,
     on: {
-      slideChange: function () {
+      slideChangeTransitionEnd: function () {
         updateDots(this.activeIndex);
       }
     }
   });
 
-  updateDots(swiper.activeIndex);
+
+  /* -----------------------------
+     CREATE DOTS DYNAMICALLY
+  ----------------------------- */
+  const slides = document.querySelectorAll(".swiper-slide");
+  const dotsContainer = document.querySelector(".side-dots");
+
+  dotsContainer.innerHTML = ""; // pulizia
+
+  slides.forEach((slide, index) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    dot.dataset.index = index;
+    dotsContainer.appendChild(dot);
+  });
 
   const dots = document.querySelectorAll(".side-dots .dot");
 
+
+  /* -----------------------------
+     UPDATE DOTS
+  ----------------------------- */
   function updateDots(activeIndex) {
-    const dots = document.querySelectorAll('.side-dots .dot');
     dots.forEach(dot => dot.classList.remove('active'));
     if (dots[activeIndex]) {
       dots[activeIndex].classList.add('active');
     }
   }
 
+
+  /* -----------------------------
+     FIX: SWIPER + ANCHOR NAVIGATION
+  ----------------------------- */
+  const url = new URL(window.location.href);
+  const anchor = url.hash;
+
+  if (anchor) {
+    const target = document.querySelector(anchor);
+
+    if (target) {
+      const slide = target.closest(".swiper-slide");
+      const index = Array.from(slides).indexOf(slide);
+
+      if (index >= 0) {
+        swiper.slideTo(index, 0);
+        updateDots(index);
+        document.body.style.overflow = "hidden";
+      }
+    }
+  }
+
+
+  /* -----------------------------
+     INITIAL DOT UPDATE
+  ----------------------------- */
+  updateDots(swiper.activeIndex);
+
+
+  /* -----------------------------
+     DOT CLICK
+  ----------------------------- */
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
       const index = parseInt(dot.dataset.index);
@@ -39,11 +88,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+
+  /* -----------------------------
+     BACK TO TOP
+  ----------------------------- */
   document.getElementById('backToTop').addEventListener('click', () => {
-    swiper.slideTo(0); // go to the top slide
+    swiper.slideTo(0);
   });
 
-  const url = new URL(window.location.href);
+
+  /* -----------------------------
+     CANDIDATURA CHECK
+  ----------------------------- */
   if (url.searchParams.get("candidatura") === "ok") {
     alert("Grazie! La tua candidatura è stata inviata correttamente.");
     window.location.href = "/lavora-con-noi";
@@ -60,35 +116,28 @@ document.addEventListener("DOMContentLoaded", () => {
       const submenu = item.querySelector(".mega-menu.small-dropdown");
       const link = item.querySelector(".nav-link");
 
-      if (!submenu) return; // skip items without dropdown
+      if (!submenu) return;
 
       link.addEventListener("click", function(e) {
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
-        if (!isMobile) return; // desktop → normal navigation
+        if (!isMobile) return;
 
-        // MOBILE ONLY
         if (!item.classList.contains("open")) {
           e.preventDefault();
-
-          // Close others
           navItems.forEach(i => {
             if (i !== item) i.classList.remove("open");
           });
-
           item.classList.add("open");
         } else {
-          // Second tap → navigate
           window.location = link.href;
         }
       });
     });
 
-    // Close menu when clicking outside
     document.addEventListener("click", function(e) {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
       if (!isMobile) return;
 
-      // If click is outside the nav
       if (!e.target.closest(".nav-item.dropdown-mega")) {
         navItems.forEach(item => item.classList.remove("open"));
       }
@@ -96,6 +145,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   setupMobileDropdowns();
-
 
 });

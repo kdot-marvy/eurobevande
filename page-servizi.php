@@ -223,12 +223,6 @@ get_header();
 
                     <!-- DOTS CUSTOM -->
         <div class="side-dots">
-            <div class="dot" data-index="0"></div>
-            <div class="dot" data-index="1"></div>
-            <div class="dot" data-index="2"></div>
-            <div class="dot" data-index="3"></div>
-            <div class="dot" data-index="4"></div>
-            <div class="dot" data-index="5"></div>
         </div>
 
       </div>
