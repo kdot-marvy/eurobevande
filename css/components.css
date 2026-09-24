@@ -141,12 +141,6 @@
   padding-bottom: 20px;
 }
 
-.process-wrapper {
-  position: relative;
-  display: flex;
-  height: 70%;
-  margin-right: auto;
-}
 
 .process-wrapper > img {
   left: 0;
@@ -243,16 +237,6 @@
   z-index: 10;
 }
 
-.process-step {
-  position: relative;
-  z-index: 5;
-}
-
-.process-step > .step-number {
-  font-size: 80px;
-  font-weight: 700;
-  line-height: 1;
-}
 
 .step-text h3 {
   font-size: 18px;
@@ -530,12 +514,6 @@
 
 }
 
-.services-list {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-        gap: clamp(40px, 5vh + 5vw, 80px);
-        }
 
 
 
@@ -545,11 +523,6 @@
   color: #ffffff;
 }
 
-/* Step container */
-.process-step {
-    display: flex;
-    align-items: center;
-}
 
 .index-number {
     font-size: clamp(44px, 7.5vw, 76px); /* slightly bigger */
@@ -569,3 +542,71 @@
     margin-left: clamp(18px, 5vw, 40px); /* slightly more shift */
 }
 
+
+
+
+.process-section {
+  position: relative;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+
+.process-wrapper {
+  position: relative;
+  height: 65%;
+}
+
+.process-wrapper > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+
+.services-list {
+  position: absolute;
+  inset: 0;
+}
+
+.process-step {
+  position: absolute;
+  left: 68px;
+  z-index: 2;
+}
+
+.process-step:nth-child(1) {
+  top: 2%;
+}
+
+.process-step:nth-child(2) {
+    top: 30%;
+}
+
+.process-step:nth-child(3) {
+    top: 58%;
+}
+
+.process-step:nth-child(4) {
+    top: 85%;
+}
+
+.index-number {
+    font-size: clamp(3rem, 10vw, 4.5rem);
+    font-weight: 700;
+}
+
+.index-text h3 {
+    font-size: clamp(0.9rem, 2.8vw, 1.3rem);
+}
+
+
+.index-text {
+    width: max-content;
+}
+
+.index-text h3 {
+    white-space: nowrap;
+    margin: 0;
+}
