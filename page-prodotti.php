@@ -315,7 +315,7 @@ $slides_count += 6;
         </div>
 
             <!-- DOTS CUSTOM -->
-        <div class="side-dots">
+        <div class="side-dots side-dots-light">
         </div>
     </div>
 

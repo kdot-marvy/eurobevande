@@ -272,7 +272,7 @@ get_header();
         </div>
 
                     <!-- DOTS CUSTOM -->
-        <div class="side-dots">
+        <div class="side-dots side-dots-dark">
             <div class="dot" data-index="0"></div>
             <div class="dot" data-index="1"></div>
             <div class="dot" data-index="2"></div>

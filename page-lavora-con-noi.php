@@ -251,13 +251,13 @@ $open_positions = get_field('open_positions');
 
                                     <div class="mb-3">
                                         <label>Messaggio</label>
-                                        <textarea name="messaggio" class="form-control" rows="5"></textarea>
+                                        <textarea name="messaggio" class="form-control"></textarea>
                                     </div>
 
                                     <button type="submit" class="btn btn-primary">Invia candidatura</button>
 
                                 </form>
-                                <div class="star mobile-version mt-auto">★</div>
+                                <!-- <div class="star mobile-version mt-auto">★</div> -->
 
                             </div>
 
@@ -276,7 +276,7 @@ $open_positions = get_field('open_positions');
 
         </div>
                             <!-- DOTS CUSTOM -->
-        <div class="side-dots">
+        <div class="side-dots side-dots-light">
         </div>
     </div>
 </div>

@@ -227,7 +227,7 @@ $events_image      = get_field('chi_siamo_events_image');
         </div>
         
                     <!-- DOTS CUSTOM -->
-        <div class="side-dots">
+        <div class="side-dots side-dots-light">
             <div class="dot" data-index="0"></div>
             <div class="dot" data-index="1"></div>
             <div class="dot" data-index="2"></div>

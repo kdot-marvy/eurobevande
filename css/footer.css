@@ -206,6 +206,10 @@
     gap: 4px;
 }
 
+.footer-column-mobile > span {
+    font-size: 12px;
+}
+
 /* COPYRIGHT (duplicate but kept for completeness) */
 .footer-copy {
     font-size: 14px;

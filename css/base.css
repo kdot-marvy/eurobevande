@@ -151,7 +151,8 @@ body.page-slug-galleria {
   z-index: 999;
 }
 
-.side-dots .dot {
+/* Sfondo scuro */
+.side-dots-dark .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -160,8 +161,18 @@ body.page-slug-galleria {
   transition: 0.25s ease;
 }
 
+/* Sfondo chiaro */
+.side-dots-light .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(29,94,168,0.35);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
 .side-dots .dot.active {
-  background: #ffffff;
+  background: #f7d74c;
   transform: scale(1.3);
 }
 
