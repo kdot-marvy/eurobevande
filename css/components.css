@@ -161,7 +161,7 @@
 
 .short-curve-svg {
   position: relative;
-  display: flex;
+  z-index: 3;
   height: 35%;
   margin-top: auto;
 }
@@ -172,6 +172,8 @@
     height: 100%;
     pointer-events: none;
     z-index: 2;
+    width: auto;
+    display: block;
 }
 
 .process-step a {
@@ -574,6 +576,26 @@
   position: absolute;
   left: 68px;
   z-index: 2;
+}
+
+
+.process-step-short {
+  position: absolute;
+  left: 68px;
+  z-index: 2;
+}
+
+.process-step-short a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.process-step-short:nth-child(1) {
+  top: 15%;
+}
+
+.process-step-short:nth-child(2) {
+    top: 60%;
 }
 
 .process-step:nth-child(1) {

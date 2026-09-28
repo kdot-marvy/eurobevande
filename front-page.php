@@ -55,7 +55,7 @@ get_header();
                             <div class="short-curve-svg">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/curva-mob-short.svg" alt="curve" />
                                 <div class="services-list">
-                                    <div class="process-step">
+                                    <div class="process-step-short">
                                         <a href="/euro-bevande/servizi#servizio1" class="service">
                                         <div class="index-number">01</div>
                                         <div class="index-text">
@@ -64,7 +64,7 @@ get_header();
                                         </a>
                                     </div>
 
-                                    <div class="process-step shift-left">
+                                    <div class="process-step-short shift-left">
                                         <a href="/euro-bevande/servizi#servizio2" class="service">
                                             <div class="index-number">02</div>
                                         </a>
