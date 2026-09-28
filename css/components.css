@@ -47,6 +47,28 @@
   font-weight: 550;
   color: var(--primary-color);
   margin-bottom: 28px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.step-section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 20px;
+  background: #f7d74c;
+  transform: skewX(-20deg);
+  z-index: -1;
+
+  background: linear-gradient(
+      to right,
+      rgba(247, 215, 76, 0) 0%,
+      rgba(247, 215, 76, 0.4) 20%,
+      rgba(247, 215, 76, 1) 100%
+  );
+
 }
 
 .step-left-subtitle{

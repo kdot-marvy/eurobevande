@@ -397,6 +397,10 @@
 ========================================= */
 @media (max-width: 768px) {
 
+  .eb-logo{
+    height: 48px;
+  }
+
   .eb-logo-text {
     display: none;
   }
