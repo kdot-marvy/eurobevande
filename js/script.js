@@ -146,4 +146,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupMobileDropdowns();
 
+  document.querySelectorAll('.go-to-form').forEach(btn => {
+
+      btn.addEventListener('click', e => {
+
+          e.preventDefault();
+
+          swiper.slideNext();
+
+      });
+
+  });
 });
